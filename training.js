@@ -85,3 +85,18 @@ function loadProgress() {
     }
 
 }
+
+function saveFeedback() {
+
+    let feedback = document.getElementById("feedback").value;
+
+
+    localStorage.setItem(
+        "strideLabFeedback",
+        feedback
+    );
+
+
+    alert("Feedback gespeichert ✅");
+
+}
