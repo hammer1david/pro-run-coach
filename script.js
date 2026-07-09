@@ -166,12 +166,21 @@ function login() {
 
     let role = document.getElementById("role").value;
 
-    if (role === "Athlet") {
-        window.location.href = "athlete.html";
-    }
 
-    if (role === "Coach") {
+    localStorage.setItem(
+        "strideLabRole",
+        role
+    );
+
+
+    if (role === "coach") {
+
         window.location.href = "coach.html";
+
+    } else {
+
+        window.location.href = "athlete.html";
+
     }
 
 }
