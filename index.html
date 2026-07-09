@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pro Run Coach</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Pro Run Coach</h1>
+    <p>Trainiere mit Methoden aus dem Profisport</p>
+</header>
+
+<section>
+    <h2>Erstelle deinen Trainingsplan</h2>
+
+    <label>Deine Distanz:</label>
+    <select id="distance">
+        <option>5 km</option>
+        <option>10 km</option>
+        <option>Halbmarathon</option>
+        <option>Marathon</option>
+    </select>
+
+    <br><br>
+
+    <label>Deine aktuelle Zeit:</label>
+    <input id="time" placeholder="z.B. 20:00">
+
+    <br><br>
+
+    <button onclick="createPlan()">
+        Trainingsplan erstellen
+    </button>
+
+    <h3 id="result"></h3>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
