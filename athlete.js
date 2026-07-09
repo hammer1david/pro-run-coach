@@ -1,31 +1,47 @@
-
 window.onload = function() {
 
-    let plan = `
+    let savedPlan = localStorage.getItem("strideLabPlan");
+
+    let plan;
+
+    if (savedPlan) {
+
+        plan = JSON.parse(savedPlan);
+
+    } else {
+
+        plan = {
+            monday: "Noch kein Training geplant",
+            tuesday: "Noch kein Training geplant",
+            wednesday: "Noch kein Training geplant",
+            thursday: "Noch kein Training geplant",
+            saturday: "Noch kein Training geplant"
+        };
+
+    }
+
+
+    let output = `
+
     Montag:
-    ${trainingPlan.monday}
+    ${plan.monday}
 
     Dienstag:
-    ${trainingPlan.tuesday}
+    ${plan.tuesday}
 
     Mittwoch:
-    ${trainingPlan.wednesday}
+    ${plan.wednesday}
 
     Donnerstag:
-    ${trainingPlan.thursday}
-
-    Freitag:
-    ${trainingPlan.friday}
+    ${plan.thursday}
 
     Samstag:
-    ${trainingPlan.saturday}
+    ${plan.saturday}
 
-    Sonntag:
-    ${trainingPlan.sunday}
     `;
 
 
     document.getElementById("training").innerHTML =
-    plan.replace(/\n/g, "<br>");
+    output.replace(/\n/g, "<br>");
 
 };
