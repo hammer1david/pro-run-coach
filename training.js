@@ -1,17 +1,59 @@
-let trainingPlan = {
+window.onload = function() {
 
-    monday: "Locker Lauf + Mobilität",
+    let savedProgress = localStorage.getItem("strideLabProgress");
 
-    tuesday: "Intervalle",
+    if (savedProgress) {
 
-    wednesday: "Regeneration",
+        let trainings = JSON.parse(savedProgress);
 
-    thursday: "Tempolauf",
+        let cards = document.querySelectorAll(".card");
 
-    friday: "Ruhetag",
+        cards.forEach(function(card, index) {
 
-    saturday: "Langer Lauf",
+            let checkbox = card.querySelector("input[type='checkbox']");
+            let note = card.querySelector("textarea");
 
-    sunday: "Erholung"
+            if (trainings[index]) {
+                checkbox.checked = trainings[index].completed;
+                note.value = trainings[index].note;
+            }
+
+        });
+    }
 
 };
+
+
+function saveProgress() {
+
+    let trainings = [];
+
+    let cards = document.querySelectorAll(".card");
+
+
+    cards.forEach(function(card) {
+
+        let checkbox = card.querySelector("input[type='checkbox']");
+        let note = card.querySelector("textarea");
+
+
+        trainings.push({
+
+            completed: checkbox.checked,
+
+            note: note.value
+
+        });
+
+    });
+
+
+    localStorage.setItem(
+        "strideLabProgress",
+        JSON.stringify(trainings)
+    );
+
+
+    alert("Fortschritt gespeichert ✅");
+
+}
