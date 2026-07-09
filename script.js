@@ -162,26 +162,11 @@ Samstag: Langer Lauf
 
 `;
 }
+
 function login() {
 
     let role = document.getElementById("role").value;
 
-
-    localStorage.setItem(
-        "strideLabRole",
-        "coach"
-    );
-    alert(role);
-
-
-    if (role === "coach") {
-
-        window.location.href = "coach.html";
-
-    } else {
-
-        window.location.href = "athlete.html";
-
-    }
+    alert("Gewählte Rolle: " + role);
 
 }
