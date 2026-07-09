@@ -96,6 +96,30 @@ if (distance === "5 km" && currentTime.includes(":")) {
     `;
 
 
-    document.getElementById("result").innerHTML =
-    plan.replace(/\n/g, "<br>");
+    document.getElementById("result").innerHTML = `
+<div class="card">
+<h3>👤 Athletenprofil</h3>
+<p>Ziel: ${distance}</p>
+<p>Level: ${level}</p>
+<p>Training: ${days}</p>
+</div>
+
+<div class="card">
+<h3>📊 Leistungsdaten</h3>
+<p>Aktuelle Zeit: ${currentTime}</p>
+<p>Zielzeit: ${targetTime}</p>
+</div>
+
+<div class="card">
+<h3>📅 Trainingswoche</h3>
+<p>
+Montag: Lockerer Lauf + Mobilität<br>
+Dienstag: Intervalle<br>
+Mittwoch: Regeneration<br>
+Donnerstag: Tempolauf<br>
+Samstag: Langer Lauf
+</p>
+</div>
+
+`;
 }
