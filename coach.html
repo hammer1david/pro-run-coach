@@ -41,33 +41,30 @@ Trainingsplan erstellen
 
 <h3>Neue Trainingswoche</h3>
 
-<label>Montag</label>
-<input placeholder="z.B. 8 km locker">
+<input id="monday" placeholder="Montag Training">
 
+<input id="tuesday" placeholder="Dienstag Training">
 
-<label>Dienstag</label>
-<input placeholder="z.B. 6x1000m Intervalle">
+<input id="wednesday" placeholder="Mittwoch Training">
 
+<input id="thursday" placeholder="Donnerstag Training">
 
-<label>Donnerstag</label>
-<input placeholder="z.B. Tempolauf">
-
-
-<label>Samstag</label>
-<input placeholder="z.B. langer Lauf">
-
+<input id="saturday" placeholder="Samstag Training">
 
 <br><br>
 
-<button>
+<button onclick="savePlan()">
 Plan speichern
 </button>
+
+<h3 id="message"></h3>
 
 </div>
 
 
 </section>
-
+    
+<script src="coach.js"></script>
 
 </body>
 
