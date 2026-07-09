@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <title>StrideLab Profil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>StrideLab</h1>
+    <p>Athletenprofil</p>
+</header>
+
+
+<section>
+
+<h2>Erstelle dein Profil 🏃</h2>
+
+
+<label>Name</label>
+<input id="name" placeholder="Dein Name">
+
+
+<label>Ziel / Wettkampf</label>
+<input id="goal" placeholder="z.B. Marathon unter 3 Stunden oder 5000m Meisterschaft">
+
+
+<label>Bestzeiten</label>
+<textarea id="times" placeholder="z.B. 5km in 21:12, 10km in 44:30, Halbmarathon in 1:35"></textarea>
+
+
+<label>Trainingstage pro Woche</label>
+<select id="days">
+    <option>3 Tage</option>
+    <option>4 Tage</option>
+    <option>5 Tage</option>
+    <option>6 Tage</option>
+    <option>7 Tage</option>
+</select>
+
+
+<h3>Gewünschte Trainingstage</h3>
+
+<label>
+<input type="checkbox" value="Montag">
+Montag
+</label>
+
+<label>
+<input type="checkbox" value="Dienstag">
+Dienstag
+</label>
+
+<label>
+<input type="checkbox" value="Mittwoch">
+Mittwoch
+</label>
+
+<label>
+<input type="checkbox" value="Donnerstag">
+Donnerstag
+</label>
+
+<label>
+<input type="checkbox" value="Freitag">
+Freitag
+</label>
+
+<label>
+<input type="checkbox" value="Samstag">
+Samstag
+</label>
+
+<label>
+<input type="checkbox" value="Sonntag">
+Sonntag
+</label>
+
+
+<br><br>
+
+<button onclick="saveProfile()">
+Profil speichern
+</button>
+
+
+<h3 id="message"></h3>
+
+
+</section>
+
+
+<script src="profile.js"></script>
+
+</body>
+
+</html>
