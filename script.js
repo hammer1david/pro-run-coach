@@ -5,39 +5,55 @@ function createPlan() {
     let targetTime = document.getElementById("targetTime").value;
     let days = document.getElementById("days").value;
 
-    let plan = "";
+    let level = "";
 
-    plan = `
-    Dein persönlicher ${distance}-Trainingsplan
+    if (distance === "5 km") {
 
+        let minutes = parseInt(currentTime.split(":")[0]);
+
+        if (minutes > 25) {
+            level = "Einsteiger";
+        } 
+        else if (minutes > 20) {
+            level = "Hobbyläufer";
+        } 
+        else {
+            level = "Fortgeschrittener Läufer";
+        }
+    }
+
+    let plan = `
+    Dein Pro Run Coach Plan
+
+    Distanz: ${distance}
+    Level: ${level}
     Aktuelle Zeit: ${currentTime}
     Zielzeit: ${targetTime}
-    Training: ${days}
+    Trainingstage: ${days}
 
-    Woche 1:
+    Dein Training:
 
     Montag:
-    Lockerer Dauerlauf + Lauftechnik
+    Lockerer Lauf + Mobilität
 
     Dienstag:
-    Intervalltraining passend zu deinem Ziel
+    Intervalle zur Verbesserung der Geschwindigkeit
 
     Mittwoch:
-    Regeneration oder Krafttraining
+    Erholung oder Krafttraining
 
     Donnerstag:
-    Tempolauf im geplanten Wettkampftempo
+    Tempolauf
 
     Samstag:
-    Langer Lauf für die Ausdauer
+    Langer Dauerlauf
 
     Sonntag:
-    Lockerer Lauf oder Erholung
+    Regeneration
 
-    Dieser Plan wird in den nächsten Versionen
-    mit deinen Daten automatisch angepasst.
+    Erstellt nach Prinzipien aus dem Leistungssport.
     `;
 
-    document.getElementById("result").innerHTML = 
+    document.getElementById("result").innerHTML =
     plan.replace(/\n/g, "<br>");
 }
