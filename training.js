@@ -2,33 +2,26 @@ let currentRole = "athlete";
 
 
 function setRole(role) {
-
     currentRole = role;
-
     applyPermissions();
-
     alert("Modus: " + role);
-
 }
-
 
 
 function applyPermissions() {
 
-    let coachFields = document.querySelectorAll(
-        "textarea[id*='Training'], textarea[id*='CoachNote']"
+    let fields = document.querySelectorAll(
+        "textarea"
     );
 
+    fields.forEach(function(field) {
 
-    coachFields.forEach(function(field) {
+        if (
+            field.id.includes("Training") ||
+            field.id.includes("CoachNote")
+        ) {
 
-        if (currentRole === "coach") {
-
-            field.disabled = false;
-
-        } else {
-
-            field.disabled = true;
+            field.disabled = (currentRole !== "coach");
 
         }
 
@@ -37,69 +30,41 @@ function applyPermissions() {
 }
 
 
-
 function saveTraining() {
 
-
-    let trainingData = {
-
-
-        monday: {
-            training: mondayTraining.value,
-            coachNote: mondayCoachNote.value,
-            done: mondayDone.checked,
-            athleteNote: mondayAthleteNote.value
-        },
-
-
-        tuesday: {
-            training: tuesdayTraining.value,
-            coachNote: tuesdayCoachNote.value,
-            done: tuesdayDone.checked,
-            athleteNote: tuesdayAthleteNote.value
-        },
+    let days = [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+    ];
 
 
-        wednesday: {
-            training: wednesdayTraining.value,
-            coachNote: wednesdayCoachNote.value,
-            done: wednesdayDone.checked,
-            athleteNote: wednesdayAthleteNote.value
-        },
+    let trainingData = {};
 
 
-        thursday: {
-            training: thursdayTraining.value,
-            coachNote: thursdayCoachNote.value,
-            done: thursdayDone.checked,
-            athleteNote: thursdayAthleteNote.value
-        },
+    days.forEach(function(day) {
 
+        trainingData[day] = {
 
-        friday: {
-            training: fridayTraining.value,
-            coachNote: fridayCoachNote.value,
-            done: fridayDone.checked,
-            athleteNote: fridayAthleteNote.value
-        },
+            training:
+            document.getElementById(day + "Training").value,
 
+            coachNote:
+            document.getElementById(day + "CoachNote").value,
 
-        saturday: {
-            training: saturdayTraining.value,
-            coachNote: saturdayCoachNote.value,
-            done: saturdayDone.checked,
-            athleteNote: saturdayAthleteNote.value
-        },
+            done:
+            document.getElementById(day + "Done").checked,
 
+            athleteNote:
+            document.getElementById(day + "AthleteNote").value
 
-        sunday: {
-            training: sundayTraining.value,
-            coachNote: sundayCoachNote.value,
-            done: sundayDone.checked,
-            athleteNote: sundayAthleteNote.value
-        }
+        };
 
-    };
+    });
 
 
     localStorage.setItem(
@@ -114,62 +79,32 @@ function saveTraining() {
 
 
 
-
 window.onload = function() {
 
-
-    let saved = localStorage.getItem(
-        "strideLabTraining"
-    );
+    let saved =
+    localStorage.getItem("strideLabTraining");
 
 
     if(saved) {
 
-
         let data = JSON.parse(saved);
 
 
-        mondayTraining.value = data.monday.training;
-        mondayCoachNote.value = data.monday.coachNote;
-        mondayDone.checked = data.monday.done;
-        mondayAthleteNote.value = data.monday.athleteNote;
+        Object.keys(data).forEach(function(day) {
 
+            document.getElementById(day + "Training").value =
+            data[day].training;
 
-        tuesdayTraining.value = data.tuesday.training;
-        tuesdayCoachNote.value = data.tuesday.coachNote;
-        tuesdayDone.checked = data.tuesday.done;
-        tuesdayAthleteNote.value = data.tuesday.athleteNote;
+            document.getElementById(day + "CoachNote").value =
+            data[day].coachNote;
 
+            document.getElementById(day + "Done").checked =
+            data[day].done;
 
-        wednesdayTraining.value = data.wednesday.training;
-        wednesdayCoachNote.value = data.wednesday.coachNote;
-        wednesdayDone.checked = data.wednesday.done;
-        wednesdayAthleteNote.value = data.wednesday.athleteNote;
+            document.getElementById(day + "AthleteNote").value =
+            data[day].athleteNote;
 
-
-        thursdayTraining.value = data.thursday.training;
-        thursdayCoachNote.value = data.thursday.coachNote;
-        thursdayDone.checked = data.thursday.done;
-        thursdayAthleteNote.value = data.thursday.athleteNote;
-
-
-        fridayTraining.value = data.friday.training;
-        fridayCoachNote.value = data.friday.coachNote;
-        fridayDone.checked = data.friday.done;
-        fridayAthleteNote.value = data.friday.athleteNote;
-
-
-        saturdayTraining.value = data.saturday.training;
-        saturdayCoachNote.value = data.saturday.coachNote;
-        saturdayDone.checked = data.saturday.done;
-        saturdayAthleteNote.value = data.saturday.athleteNote;
-
-
-        sundayTraining.value = data.sunday.training;
-        sundayCoachNote.value = data.sunday.coachNote;
-        sundayDone.checked = data.sunday.done;
-        sundayAthleteNote.value = data.sunday.athleteNote;
-
+        });
 
     }
 
