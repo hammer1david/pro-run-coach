@@ -1,102 +1,179 @@
-window.onload = function() {
-
-    let savedPlan = localStorage.getItem("strideLabTrainingPlan");
-
-    if (savedPlan) {
-
-        let plan = JSON.parse(savedPlan);
-
-        document.getElementById("monday").innerHTML = plan.monday;
-        document.getElementById("tuesday").innerHTML = plan.tuesday;
-        document.getElementById("wednesday").innerHTML = plan.wednesday;
-        document.getElementById("thursday").innerHTML = plan.thursday;
-        document.getElementById("friday").innerHTML = plan.friday;
-        document.getElementById("saturday").innerHTML = plan.saturday;
-        document.getElementById("sunday").innerHTML = plan.sunday;
-
-    }
+let currentRole = "athlete";
 
 
-    loadProgress();
+function setRole(role) {
 
-};
+    currentRole = role;
+
+    applyPermissions();
+
+    alert("Modus: " + role);
+
+}
 
 
 
-function saveProgress() {
+function applyPermissions() {
 
-    let trainings = [];
-
-    let cards = document.querySelectorAll(".card");
-
-
-    cards.forEach(function(card) {
-
-        let checkbox = card.querySelector("input[type='checkbox']");
-        let note = card.querySelector("textarea");
+    let coachFields = document.querySelectorAll(
+        "textarea[id*='Training'], textarea[id*='CoachNote']"
+    );
 
 
-        trainings.push({
-            completed: checkbox.checked,
-            note: note.value
-        });
+    coachFields.forEach(function(field) {
+
+        if (currentRole === "coach") {
+
+            field.disabled = false;
+
+        } else {
+
+            field.disabled = true;
+
+        }
 
     });
 
+}
+
+
+
+function saveTraining() {
+
+
+    let trainingData = {
+
+
+        monday: {
+            training: mondayTraining.value,
+            coachNote: mondayCoachNote.value,
+            done: mondayDone.checked,
+            athleteNote: mondayAthleteNote.value
+        },
+
+
+        tuesday: {
+            training: tuesdayTraining.value,
+            coachNote: tuesdayCoachNote.value,
+            done: tuesdayDone.checked,
+            athleteNote: tuesdayAthleteNote.value
+        },
+
+
+        wednesday: {
+            training: wednesdayTraining.value,
+            coachNote: wednesdayCoachNote.value,
+            done: wednesdayDone.checked,
+            athleteNote: wednesdayAthleteNote.value
+        },
+
+
+        thursday: {
+            training: thursdayTraining.value,
+            coachNote: thursdayCoachNote.value,
+            done: thursdayDone.checked,
+            athleteNote: thursdayAthleteNote.value
+        },
+
+
+        friday: {
+            training: fridayTraining.value,
+            coachNote: fridayCoachNote.value,
+            done: fridayDone.checked,
+            athleteNote: fridayAthleteNote.value
+        },
+
+
+        saturday: {
+            training: saturdayTraining.value,
+            coachNote: saturdayCoachNote.value,
+            done: saturdayDone.checked,
+            athleteNote: saturdayAthleteNote.value
+        },
+
+
+        sunday: {
+            training: sundayTraining.value,
+            coachNote: sundayCoachNote.value,
+            done: sundayDone.checked,
+            athleteNote: sundayAthleteNote.value
+        }
+
+    };
+
 
     localStorage.setItem(
-        "strideLabProgress",
-        JSON.stringify(trainings)
+        "strideLabTraining",
+        JSON.stringify(trainingData)
     );
 
 
-    alert("Fortschritt gespeichert ✅");
+    alert("Training gespeichert ✅");
 
 }
 
 
 
-function loadProgress() {
 
-    let savedProgress = localStorage.getItem("strideLabProgress");
-
-
-    if (savedProgress) {
-
-        let trainings = JSON.parse(savedProgress);
-
-        let cards = document.querySelectorAll(".card");
+window.onload = function() {
 
 
-        cards.forEach(function(card, index) {
+    let saved = localStorage.getItem(
+        "strideLabTraining"
+    );
 
-            if (trainings[index]) {
 
-                card.querySelector("input[type='checkbox']").checked =
-                trainings[index].completed;
+    if(saved) {
 
-                card.querySelector("textarea").value =
-                trainings[index].note;
 
-            }
+        let data = JSON.parse(saved);
 
-        });
+
+        mondayTraining.value = data.monday.training;
+        mondayCoachNote.value = data.monday.coachNote;
+        mondayDone.checked = data.monday.done;
+        mondayAthleteNote.value = data.monday.athleteNote;
+
+
+        tuesdayTraining.value = data.tuesday.training;
+        tuesdayCoachNote.value = data.tuesday.coachNote;
+        tuesdayDone.checked = data.tuesday.done;
+        tuesdayAthleteNote.value = data.tuesday.athleteNote;
+
+
+        wednesdayTraining.value = data.wednesday.training;
+        wednesdayCoachNote.value = data.wednesday.coachNote;
+        wednesdayDone.checked = data.wednesday.done;
+        wednesdayAthleteNote.value = data.wednesday.athleteNote;
+
+
+        thursdayTraining.value = data.thursday.training;
+        thursdayCoachNote.value = data.thursday.coachNote;
+        thursdayDone.checked = data.thursday.done;
+        thursdayAthleteNote.value = data.thursday.athleteNote;
+
+
+        fridayTraining.value = data.friday.training;
+        fridayCoachNote.value = data.friday.coachNote;
+        fridayDone.checked = data.friday.done;
+        fridayAthleteNote.value = data.friday.athleteNote;
+
+
+        saturdayTraining.value = data.saturday.training;
+        saturdayCoachNote.value = data.saturday.coachNote;
+        saturdayDone.checked = data.saturday.done;
+        saturdayAthleteNote.value = data.saturday.athleteNote;
+
+
+        sundayTraining.value = data.sunday.training;
+        sundayCoachNote.value = data.sunday.coachNote;
+        sundayDone.checked = data.sunday.done;
+        sundayAthleteNote.value = data.sunday.athleteNote;
+
 
     }
 
-}
 
-function saveFeedback() {
+    applyPermissions();
 
-    let feedback = document.getElementById("feedback").value;
-
-
-    localStorage.setItem(
-        "strideLabFeedback",
-        feedback
-    );
-
-
-    alert("Feedback gespeichert ✅");
-
-}
+};
