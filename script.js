@@ -20,16 +20,25 @@ function createPlan() {
         else {
             level = "Fortgeschrittener Läufer";
         }
+
+    } else {
+        level = "Läufer";
     }
+
 
     let plan = `
     Dein Pro Run Coach Plan
 
     Distanz: ${distance}
+
     Level: ${level}
+
     Aktuelle Zeit: ${currentTime}
+
     Zielzeit: ${targetTime}
+
     Trainingstage: ${days}
+
 
     Dein Training:
 
@@ -37,7 +46,7 @@ function createPlan() {
     Lockerer Lauf + Mobilität
 
     Dienstag:
-    Intervalle zur Verbesserung der Geschwindigkeit
+    Intervalltraining zur Verbesserung deiner Geschwindigkeit
 
     Mittwoch:
     Erholung oder Krafttraining
@@ -51,8 +60,10 @@ function createPlan() {
     Sonntag:
     Regeneration
 
+
     Erstellt nach Prinzipien aus dem Leistungssport.
     `;
+
 
     document.getElementById("result").innerHTML =
     plan.replace(/\n/g, "<br>");
