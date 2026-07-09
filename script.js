@@ -174,11 +174,6 @@ function login() {
     );
 
 
-    alert(
-        "Gespeichert: " + localStorage.getItem("strideLabRole")
-    );
-
-
     if (role.toLowerCase() === "coach") {
 
         window.location.href = "coach.html";
