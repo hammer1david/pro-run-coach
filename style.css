@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f4f7fb;
+    background: #0f172a;
+    color: white;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -8,35 +9,63 @@ body {
 
 header {
     background: #111827;
-    color: white;
-    padding: 30px;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    color: #cbd5e1;
 }
 
 section {
-    background: white;
-    max-width: 500px;
+    background: #1e293b;
+    max-width: 550px;
     margin: 40px auto;
-    padding: 30px;
-    border-radius: 15px;
+    padding: 35px;
+    border-radius: 20px;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    color: #e2e8f0;
 }
 
 select, input {
-    padding: 10px;
-    width: 80%;
-    margin-top: 10px;
+    width: 85%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: none;
     font-size: 16px;
 }
 
 button {
-    background: #16a34a;
+    margin-top: 25px;
+    background: #22c55e;
     color: white;
     border: none;
-    padding: 15px 25px;
-    border-radius: 8px;
-    font-size: 16px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 17px;
     cursor: pointer;
 }
 
 button:hover {
-    background: #15803d;
+    background: #16a34a;
+}
+
+#result {
+    margin-top: 30px;
+    text-align: left;
+    line-height: 1.8;
 }
