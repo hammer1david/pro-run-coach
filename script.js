@@ -54,6 +54,44 @@ if (distance === "5 km" && currentTime.includes(":")) {
     `;
 }
 
+
+    let training = "";
+
+if (distance === "5 km" && currentTime.includes(":")) {
+
+    let parts = currentTime.split(":");
+    let minutes = parseInt(parts[0]);
+    let seconds = parseInt(parts[1]);
+
+    let totalSeconds = minutes * 60 + seconds;
+
+    let pace = totalSeconds / 5; // Sekunden pro km
+
+
+    function paceFormat(seconds) {
+        let min = Math.floor(seconds / 60);
+        let sec = Math.round(seconds % 60);
+
+        return min + ":" + sec.toString().padStart(2, "0") + " min/km";
+    }
+
+
+    let easy = pace + 60;
+    let tempo = pace + 20;
+    let interval = pace - 10;
+
+
+    training = `
+    🟢 Lockerer Lauf:
+    ${paceFormat(easy)}
+
+    🟡 Tempolauf:
+    ${paceFormat(tempo)}
+
+    🔴 Intervalle:
+    ${paceFormat(interval)}
+    `;
+}
     
     let plan = `
     Dein Pro Run Coach Plan
@@ -108,6 +146,7 @@ if (distance === "5 km" && currentTime.includes(":")) {
 <h3>📊 Leistungsdaten</h3>
 <p>Aktuelle Zeit: ${currentTime}</p>
 <p>Zielzeit: ${targetTime}</p>
+<p>${training}</p>
 </div>
 
 <div class="card">
