@@ -170,14 +170,16 @@ function login() {
 
     localStorage.setItem(
         "strideLabRole",
-        role
+        role.toLowerCase()
     );
 
 
-    alert("Gespeichert: " + localStorage.getItem("strideLabRole"));
+    alert(
+        "Gespeichert: " + localStorage.getItem("strideLabRole")
+    );
 
 
-    if (role === "coach") {
+    if (role.toLowerCase() === "coach") {
 
         window.location.href = "coach.html";
 
