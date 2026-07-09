@@ -1,49 +1,43 @@
 function createPlan() {
 
     let distance = document.getElementById("distance").value;
-    let time = document.getElementById("time").value;
+    let currentTime = document.getElementById("currentTime").value;
+    let targetTime = document.getElementById("targetTime").value;
+    let days = document.getElementById("days").value;
 
     let plan = "";
 
-    if (distance === "5 km") {
-        plan = `
-        Dein 5-km Plan:
-        
-        Montag: 6 km locker
-        Dienstag: 6 x 800 m Intervalle
-        Mittwoch: Pause oder Krafttraining
-        Donnerstag: Tempolauf 20 Minuten
-        Samstag: Langer Lauf 10 km
-        `;
-    }
+    plan = `
+    Dein persönlicher ${distance}-Trainingsplan
 
-    if (distance === "10 km") {
-        plan = `
-        Dein 10-km Plan:
-        
-        Montag: 8 km locker
-        Dienstag: Intervalle
-        Donnerstag: Tempolauf
-        Samstag: 12 km langer Lauf
-        `;
-    }
+    Aktuelle Zeit: ${currentTime}
+    Zielzeit: ${targetTime}
+    Training: ${days}
 
-    if (distance === "Halbmarathon") {
-        plan = `
-        Dein Halbmarathon Plan:
-        
-        Lange Läufe + Tempotraining + Intervalle
-        `;
-    }
+    Woche 1:
 
-    if (distance === "Marathon") {
-        plan = `
-        Dein Marathon Plan:
-        
-        Grundlagenphase + lange Läufe + Marathon-Tempo
-        `;
-    }
+    Montag:
+    Lockerer Dauerlauf + Lauftechnik
+
+    Dienstag:
+    Intervalltraining passend zu deinem Ziel
+
+    Mittwoch:
+    Regeneration oder Krafttraining
+
+    Donnerstag:
+    Tempolauf im geplanten Wettkampftempo
+
+    Samstag:
+    Langer Lauf für die Ausdauer
+
+    Sonntag:
+    Lockerer Lauf oder Erholung
+
+    Dieser Plan wird in den nächsten Versionen
+    mit deinen Daten automatisch angepasst.
+    `;
 
     document.getElementById("result").innerHTML = 
-    plan;
+    plan.replace(/\n/g, "<br>");
 }
