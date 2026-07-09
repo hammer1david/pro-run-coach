@@ -1,1 +1,53 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StrideLab Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>StrideLab</h1>
+    <p>Built on elite training. Personalized for you.</p>
+</header>
+
+
+<section>
+
+<h2>Login</h2>
+
+<label>E-Mail</label>
+<input id="email" placeholder="deine@email.com">
+
+
+<label>Passwort</label>
+<input id="password" type="password" placeholder="Passwort">
+
+
+<label>Ich bin:</label>
+
+<select id="role">
+    <option>Athlet</option>
+    <option>Coach</option>
+</select>
+
+
+<br><br>
+
+<button onclick="login()">
+    Einloggen
+</button>
+
+
+<h3 id="message"></h3>
+
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
