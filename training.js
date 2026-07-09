@@ -1,5 +1,3 @@
-alert("training.js läuft");
-alert(localStorage.getItem("strideLabRole"));
 let currentRole = localStorage.getItem("strideLabRole") || "athlete";
 
 
