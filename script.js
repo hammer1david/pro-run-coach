@@ -171,6 +171,7 @@ function login() {
         "strideLabRole",
         role
     );
+    alert(role);
 
 
     if (role === "coach") {
