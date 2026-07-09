@@ -162,3 +162,16 @@ Samstag: Langer Lauf
 
 `;
 }
+function login() {
+
+    let role = document.getElementById("role").value;
+
+    if (role === "Athlet") {
+        window.location.href = "athlete.html";
+    }
+
+    if (role === "Coach") {
+        window.location.href = "coach.html";
+    }
+
+}
