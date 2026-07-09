@@ -1,4 +1,4 @@
-let currentRole = "athlete";
+let currentRole = localStorage.getItem("strideLabRole") || "athlete";
 
 
 function setRole(role) {
