@@ -169,7 +169,7 @@ function login() {
 
     localStorage.setItem(
         "strideLabRole",
-        role
+        "coach"
     );
     alert(role);
 
