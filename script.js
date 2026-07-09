@@ -25,7 +25,36 @@ function createPlan() {
         level = "Läufer";
     }
 
+let pace = "";
 
+if (distance === "5 km" && currentTime.includes(":")) {
+
+    let parts = currentTime.split(":");
+    let minutes = parseInt(parts[0]);
+    let seconds = parseInt(parts[1]);
+
+    let totalSeconds = minutes * 60 + seconds;
+
+    let paceSeconds = totalSeconds / 5;
+
+    let easyPace = Math.round(paceSeconds + 75);
+    let tempoPace = Math.round(paceSeconds + 25);
+    let intervalPace = Math.round(paceSeconds - 15);
+
+    function formatPace(seconds) {
+        let min = Math.floor(seconds / 60);
+        let sec = seconds % 60;
+        return min + ":" + sec.toString().padStart(2, "0") + " min/km";
+    }
+
+    pace = `
+    Lockere Läufe: ${formatPace(easyPace)}
+    Tempoläufe: ${formatPace(tempoPace)}
+    Intervalle: ${formatPace(intervalPace)}
+    `;
+}
+
+    
     let plan = `
     Dein Pro Run Coach Plan
 
@@ -38,6 +67,8 @@ function createPlan() {
     Zielzeit: ${targetTime}
 
     Trainingstage: ${days}
+
+    Pace-Zonen:${pace}
 
 
     Dein Training:
