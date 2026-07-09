@@ -167,6 +167,24 @@ function login() {
 
     let role = document.getElementById("role").value;
 
-    alert("Gewählte Rolle: " + role);
+
+    localStorage.setItem(
+        "strideLabRole",
+        role
+    );
+
+
+    alert("Gespeichert: " + localStorage.getItem("strideLabRole"));
+
+
+    if (role === "coach") {
+
+        window.location.href = "coach.html";
+
+    } else {
+
+        window.location.href = "athlete.html";
+
+    }
 
 }
