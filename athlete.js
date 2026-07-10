@@ -1,5 +1,47 @@
 window.onload = function() {
 
+    loadProfile();
+
+};
+function loadProfile() {
+
+    let savedProfile =
+    localStorage.getItem("strideLabProfile");
+
+
+    if(savedProfile) {
+
+        let profile =
+        JSON.parse(savedProfile);
+
+
+        let fields = document.querySelectorAll(
+            "#profile input, #profile textarea"
+        );
+
+
+        fields.forEach(function(field, index){
+
+            field.value = profile[index];
+
+        });
+
+
+        lockProfile();
+
+
+    } else {
+
+
+        document.getElementById("profileStatus").innerHTML =
+        "⚠️ Profil noch nicht ausgefüllt";
+
+
+    }
+
+}
+window.onload = function() {
+
     document.getElementById("profile").style.display = "none";
     document.getElementById("weeks").style.display = "none";
     document.getElementById("feedback").style.display = "none";
