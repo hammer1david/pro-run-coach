@@ -25,58 +25,50 @@
 <section>
 
 
-<h2>👨‍🏫 Athleten auswählen</h2>
-
+<h2>Athleten auswählen</h2>
 
 
 <div class="card">
 
 
-<select id="athleteSelect">
-
-<option value="">
-Athlet auswählen
-</option>
+<h3>🏃 Athleten</h3>
 
 
-<option value="David">
+<button onclick="openAthlete('David')">
 David
-</option>
-
-
-<option value="Athlet2">
-Athlet 2
-</option>
-
-
-<option value="Athlet3">
-Athlet 3
-</option>
-
-
-</select>
-
-
-
-<br><br>
-
-
-<button onclick="openAthlete()">
-
-Athlet öffnen
-
 </button>
 
 
-</div>
+<button onclick="openAthlete('Athlet2')">
+Athlet 2
+</button>
 
+
+<button onclick="openAthlete('Athlet3')">
+Athlet 3
+</button>
+
+
+
+</div>
 
 
 </section>
 
 
 
-<script src="coach.js"></script>
+<script>
+
+
+function openAthlete(name){
+
+window.location.href =
+"athlete.html?athlete=" + name;
+
+}
+
+
+</script>
 
 
 </body>
