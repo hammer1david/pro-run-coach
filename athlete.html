@@ -2,67 +2,203 @@
 <html>
 
 <head>
-    <title>StrideLab Athlet</title>
+    <title>StrideLab Athlete</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
+
 <header>
-    <h1>StrideLab</h1>
-    <p>Athleten Dashboard</p>
+
+<h1>StrideLab 🏃</h1>
+
+<p>Athleten Plattform</p>
+
 </header>
+
 
 
 <section>
 
-<h2>Willkommen, Athlet 🏃</h2>
+
+<h2>Willkommen Athlet 👋</h2>
+
+
 
 <div class="card">
-<h3>Dein Profil</h3>
 
-<p>Ziel: 5 km</p>
-<p>Level: Wird berechnet</p>
-<p>Trainingstage: 5 pro Woche</p>
+<h3 onclick="toggleProfile()">
+👤 Profil ▼
+</h3>
+
+
+<div id="profile">
+
+<p>
+Name:
+</p>
+
+<input placeholder="Dein Name">
+
+
+<p>
+Ziel:
+</p>
+
+<input placeholder="z.B. 1500m - 3:40">
+
+
+<p>
+Distanz:
+</p>
+
+<input placeholder="5 km / 10 km / Marathon">
+
+
+<p>
+Bestzeit:
+</p>
+
+<input placeholder="PB">
+
+
+<p>
+Trainingsziel:
+</p>
+
+<textarea placeholder="Was möchtest du erreichen?"></textarea>
+
 
 </div>
 
+</div>
+
+
+
+
 <div class="card">
 
-<h3>Dein Trainingsplan</h3>
 
-<p>Öffne deinen aktuellen Trainingsplan und dokumentiere deine Einheiten.</p>
+<h3 onclick="toggleWeeks()">
+📅 Wochenplan ▼
+</h3>
 
-<a href="training.html">
+
+<div id="weeks">
+
+
+<a href="training.html?week=1">
 <button>
-Training öffnen
+Woche 1
 </button>
 </a>
 
+
+<a href="training.html?week=2">
+<button>
+Woche 2
+</button>
+</a>
+
+
+<a href="training.html?week=3">
+<button>
+Woche 3
+</button>
+</a>
+
+
+<a href="training.html?week=4">
+<button>
+Woche 4
+</button>
+</a>
+
+
 </div>
+
+
+</div>
+
+
 
 
 
 <div class="card">
 
-<h3>Feedback</h3>
 
-<textarea placeholder="Wie fühlst du dich?"></textarea>
+<h3 onclick="toggleFeedback()">
+📝 Feedback ▼
+</h3>
 
-<br><br>
+
+<div id="feedback">
+
+
+<textarea placeholder="Wie hat sich das Training angefühlt?"></textarea>
+
+
+<textarea placeholder="Schlaf, Beine, Gesundheit..."></textarea>
+
 
 <button>
-Feedback senden
+Feedback speichern
 </button>
 
+
 </div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+📊 Fortschritt ▼
+</h3>
+
+
+<div>
+
+
+<p>
+Kilometer:
+</p>
+
+
+<p>
+Absolvierte Trainings:
+</p>
+
+
+<p>
+Entwicklung:
+</p>
+
+
+</div>
+
+
+</div>
+
 
 
 </section>
 
-<script src="training.js"></script>
+
+
+
 <script src="athlete.js"></script>
-    
+
+
 </body>
+
 
 </html>
