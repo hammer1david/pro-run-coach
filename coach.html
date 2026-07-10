@@ -63,10 +63,16 @@ Athlet 3
 
 function openAthlete(name){
 
-window.open(
+let newTab = window.open(
 "athlete.html?athlete=" + name,
 "_blank"
 );
+
+if(newTab){
+
+    newTab.focus();
+
+}
 
 }
 
