@@ -93,10 +93,9 @@ function lockProfile() {
         "#profile input, #profile textarea"
     );
 
+    fields.forEach(function(field){
 
-    fields.forEach(function(field) {
-
-        field.disabled = true;
+        field.setAttribute("disabled", "true");
 
     });
 
