@@ -396,7 +396,7 @@ function showProfileView(profile){
 
 window.onload = function() {
 
-    // Alle Karten beim Start schließen
+
     document.getElementById("profile").style.display = "none";
     document.getElementById("profileView").style.display = "none";
     document.getElementById("weeks").style.display = "none";
@@ -404,22 +404,42 @@ window.onload = function() {
     document.getElementById("progress").style.display = "none";
 
 
-    // Prüfen ob Coach geöffnet hat
-    let urlParams = new URLSearchParams(window.location.search);
 
     let backButton = document.getElementById("backToCoach");
 
-    if(urlParams.get("coach") === "true" && backButton) {
+
+
+    if(isCoach && backButton){
 
         backButton.style.display = "block";
 
     }
 
 
+
     loadProfile();
+
+
 
 };
 
 function goBackToCoach() {
     window.location.href = "coach.html";
+}
+
+function openWeek(week){
+
+    let url =
+    "training.html?athlete=" + athlete + "&week=" + week;
+
+
+    if(isCoach){
+
+        url += "&coach=true";
+
+    }
+
+
+    window.location.href = url;
+
 }
