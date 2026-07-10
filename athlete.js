@@ -1,3 +1,15 @@
+let currentAthlete = "default";
+
+
+let params = new URLSearchParams(window.location.search);
+
+
+if(params.get("athlete")) {
+
+    currentAthlete = params.get("athlete");
+
+}
+
 function saveProfile() {
 
     let weekdays = [];
@@ -28,10 +40,17 @@ function saveProfile() {
     };
 
 
-    localStorage.setItem(
-        "strideLabProfile",
-        JSON.stringify(profile)
-    );
+    let allProfiles =
+JSON.parse(localStorage.getItem("strideLabProfiles")) || {};
+
+
+allProfiles[currentAthlete] = profile;
+
+
+localStorage.setItem(
+    "strideLabProfiles",
+    JSON.stringify(allProfiles)
+);
 
 
     lockProfile();
@@ -54,8 +73,15 @@ function saveProfile() {
 function loadProfile() {
 
 
-    let savedProfile = localStorage.getItem("strideLabProfile");
+    
+let allProfiles =
+JSON.parse(localStorage.getItem("strideLabProfiles")) || {};
 
+
+let savedProfile =
+allProfiles[currentAthlete]
+? JSON.stringify(allProfiles[currentAthlete])
+: null;
 
     if(savedProfile) {
 
