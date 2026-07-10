@@ -99,30 +99,10 @@ function toggleProgress() {
     : "block";
 
 }
+
 function saveProfile() {
 
-    let fields = document.querySelectorAll(
-        "#profile input, #profile textarea"
-    );
-
-
-    let profile = [];
-
-
-    fields.forEach(function(field) {
-
-        profile.push(field.value);
-
-    });
-
-
-    localStorage.setItem(
-        "strideLabProfile",
-        JSON.stringify(profile)
-    );
-console.log(localStorage.getItem("strideLabProfile"));
-
-    lockProfile();
+    alert("Speichern funktioniert");
 
 }
 
