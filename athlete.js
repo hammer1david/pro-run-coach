@@ -160,9 +160,18 @@ function showStatus(text) {
 
 
 
+
+
 function toggleProfile() {
 
+    let savedProfile = localStorage.getItem("strideLabProfile");
+
     let section = document.getElementById("profile");
+
+    // Wenn Profil schon gespeichert ist, nichts öffnen
+    if(savedProfile) {
+        return;
+    }
 
 
     section.style.display =
@@ -171,8 +180,6 @@ function toggleProfile() {
     : "block";
 
 }
-
-
 
 
 
