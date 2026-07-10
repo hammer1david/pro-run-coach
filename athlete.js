@@ -47,8 +47,8 @@ allProfiles[currentAthlete] = profile;
 
 
 localStorage.setItem(
-    "strideLabProfiles",
-    JSON.stringify(allProfiles)
+"strideLabProfile_" + athlete,
+JSON.stringify(profile)
 );
 
 
