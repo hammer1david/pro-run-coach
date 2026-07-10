@@ -310,8 +310,12 @@ function showProfileView(profile) {
 
 window.onload = function() {
 
-    // Profilbereich immer geschlossen starten
+    // Alle Karten beim Start schließen
     document.getElementById("profile").style.display = "none";
+    document.getElementById("profileView").style.display = "none";
+    document.getElementById("weeks").style.display = "none";
+    document.getElementById("feedback").style.display = "none";
+    document.getElementById("progress").style.display = "none";
 
 
     let savedProfile = localStorage.getItem("strideLabProfile");
@@ -323,13 +327,10 @@ window.onload = function() {
 
         showProfileView(profile);
 
-        // Profilkarte auch geschlossen starten
-        document.getElementById("profileView").style.display = "none";
-
         document.getElementById("saveButton").style.display = "none";
 
-
-    } else {
+    } 
+    else {
 
         document.getElementById("saveButton").style.display = "block";
 
@@ -339,6 +340,3 @@ window.onload = function() {
     }
 
 };
-
-
-
