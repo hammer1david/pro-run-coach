@@ -8,7 +8,6 @@ let currentRole = localStorage.getItem("strideLabRole") || "athlete";
 function setRole(role) {
     currentRole = role;
     applyPermissions();
-    alert("Modus: " + role);
 }
 
 
