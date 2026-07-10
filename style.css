@@ -3,7 +3,6 @@
 }
 
 
-
 body {
 
     margin: 0;
@@ -26,7 +25,6 @@ body {
 
 
 
-
 header {
 
     text-align: center;
@@ -36,7 +34,6 @@ header {
     background: transparent;
 
 }
-
 
 
 
@@ -56,8 +53,6 @@ header h1 {
 header p {
 
     font-size: 18px;
-
-    margin-top: 10px;
 
 }
 
@@ -79,26 +74,28 @@ section {
 
 
 
-
 /* Karten */
 
 .card {
 
-    background: rgba(255,255,255,0.92);
+    background: rgba(255,255,255,0.78);
+
+    backdrop-filter: blur(10px);
 
     color: #0f172a;
 
-    border-radius: 22px;
+    border-radius: 20px;
 
-    padding: 25px;
+    padding: 24px;
 
     margin: 20px 0;
 
     box-shadow:
 
-    0 15px 35px rgba(0,0,0,0.18);
+    0 10px 25px rgba(0,0,0,0.12);
 
 }
+
 
 
 
@@ -128,17 +125,24 @@ select {
 
     width: 100%;
 
+
     padding: 14px;
+
 
     margin: 8px 0 18px 0;
 
+
     border-radius: 12px;
+
 
     border: 1px solid #cbd5e1;
 
-    background: #ffffff;
+
+    background: rgba(255,255,255,0.95);
+
 
     color: #0f172a;
+
 
     font-size: 16px;
 
@@ -171,6 +175,7 @@ textarea {
 
 
 
+
 /* Buttons */
 
 
@@ -188,15 +193,21 @@ button {
 
     color: white;
 
+
     border: none;
 
-    padding: 14px 24px;
+
+    padding: 13px 22px;
+
 
     border-radius: 12px;
 
+
     font-size: 16px;
 
+
     cursor: pointer;
+
 
     margin: 8px 5px;
 
@@ -213,6 +224,7 @@ button:hover {
 
     transform: translateY(-2px);
 
+
     opacity: 0.9;
 
 
@@ -224,7 +236,7 @@ button:hover {
 
 
 
-/* Wochen Buttons */
+/* Wochenplan */
 
 
 #weeks button {
@@ -249,10 +261,11 @@ button:hover {
 
     background:
 
-    #f1f5f9;
+    rgba(255,255,255,0.65);
 
 
 }
+
 
 
 
@@ -267,9 +280,12 @@ table {
 
     width: 100%;
 
+
     border-collapse: collapse;
 
-    background: white;
+
+    background: rgba(255,255,255,0.9);
+
 
     color: #0f172a;
 
@@ -283,7 +299,9 @@ th {
 
     background: #2563eb;
 
+
     color: white;
+
 
     padding: 15px;
 
@@ -296,6 +314,7 @@ td {
 
 
     padding: 15px;
+
 
     vertical-align: top;
 
@@ -334,7 +353,7 @@ table textarea {
 
 
 
-/* Coach Bereich kleiner */
+/* Coach Bereich */
 
 
 .coach-login {
@@ -342,7 +361,8 @@ table textarea {
 
     transform: scale(0.9);
 
-    opacity: 0.9;
+
+    opacity: 0.85;
 
 
 }
@@ -366,6 +386,7 @@ table textarea {
     }
 
 
+
     section {
 
         padding: 12px;
@@ -373,11 +394,13 @@ table textarea {
     }
 
 
+
     .card {
 
         padding: 18px;
 
     }
+
 
 
     button {
