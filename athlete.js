@@ -2,12 +2,18 @@ let params = new URLSearchParams(window.location.search);
 
 let athlete = params.get("athlete");
 
-
-if(!athlete){
-
+if (!athlete) {
     athlete = "default";
+}
+
+
+
+function getStorageKey() {
+
+    return "strideLabProfile_" + athlete;
 
 }
+
 
 
 
@@ -51,7 +57,7 @@ function saveProfile() {
 
     localStorage.setItem(
 
-        "strideLabProfile_" + athlete,
+        getStorageKey(),
 
         JSON.stringify(profile)
 
@@ -63,7 +69,9 @@ function saveProfile() {
 
     showProfileView(profile);
 
+
     showStatus("✅ Profil gespeichert");
+
 
 
     document.getElementById("profile").style.display = "none";
@@ -82,7 +90,7 @@ function loadProfile(){
 
     let savedProfile = localStorage.getItem(
 
-        "strideLabProfile_" + athlete
+        getStorageKey()
 
     );
 
@@ -95,32 +103,23 @@ function loadProfile(){
 
 
 
-        document.getElementById("profileName").value =
-        profile.name || "";
+        document.getElementById("profileName").value = profile.name || "";
 
+        document.getElementById("profileAge").value = profile.age || "";
 
-        document.getElementById("profileAge").value =
-        profile.age || "";
+        document.getElementById("profileTimes").value = profile.times || "";
 
+        document.getElementById("profileGoals").value = profile.goals || "";
 
-        document.getElementById("profileTimes").value =
-        profile.times || "";
-
-
-        document.getElementById("profileGoals").value =
-        profile.goals || "";
-
-
-        document.getElementById("trainingDays").value =
-        profile.trainingDays || "3";
+        document.getElementById("trainingDays").value = profile.trainingDays || "3";
 
 
 
         document.querySelectorAll(".weekday").forEach(function(day){
 
 
-            day.checked =
-            profile.weekdays &&
+            day.checked = profile.weekdays &&
+
             profile.weekdays.includes(day.value);
 
 
@@ -133,14 +132,15 @@ function loadProfile(){
         showProfileView(profile);
 
 
-        document.getElementById("profile").style.display = "none";
-
         document.getElementById("saveButton").style.display = "none";
 
 
     }
 
-    else{
+    else {
+
+
+        document.getElementById("saveButton").style.display = "block";
 
 
         document.getElementById("profileStatus").innerHTML =
@@ -165,7 +165,6 @@ function lockProfile(){
         "#profile input, #profile textarea, #profile select"
 
     );
-
 
 
     fields.forEach(function(field){
@@ -208,45 +207,43 @@ function showStatus(text){
 function toggleProfile(){
 
 
-    let savedProfile = localStorage.getItem(
-
-        "strideLabProfile_" + athlete
-
-    );
-
+    let profile = document.getElementById("profile");
 
     let profileView = document.getElementById("profileView");
 
-    let profileForm = document.getElementById("profile");
+
+
+    let saved = localStorage.getItem(getStorageKey());
 
 
 
-    if(!savedProfile){
+    if(saved){
 
 
-        profileForm.style.display =
+        profileView.style.display =
 
-        profileForm.style.display === "block"
+        profileView.style.display === "block"
 
         ? "none"
 
         : "block";
 
 
-        return;
+    }
+
+    else {
+
+
+        profile.style.display =
+
+        profile.style.display === "block"
+
+        ? "none"
+
+        : "block";
 
 
     }
-
-
-
-    profileView.style.display =
-
-    profileView.style.display === "block"
-
-    ? "none"
-
-    : "block";
 
 
 }
@@ -332,4 +329,91 @@ function editProfile(){
     fields.forEach(function(field){
 
 
-        field.disabled = false
+        field.disabled = false;
+
+
+    });
+
+
+
+    document.getElementById("profile").style.display = "block";
+
+    document.getElementById("saveButton").style.display = "block";
+
+    document.getElementById("profileView").style.display = "none";
+
+
+    showStatus("✏️ Profil bearbeiten");
+
+
+}
+
+
+
+
+
+function showProfileView(profile){
+
+
+    document.getElementById("viewName").innerHTML =
+
+    "👤 Name: " + profile.name;
+
+
+    document.getElementById("viewAge").innerHTML =
+
+    "🎂 Alter: " + profile.age;
+
+
+    document.getElementById("viewTimes").innerHTML =
+
+    "🏁 Bestzeiten: " + profile.times;
+
+
+    document.getElementById("viewGoals").innerHTML =
+
+    "🎯 Ziele: " + profile.goals;
+
+
+    document.getElementById("viewTrainingDays").innerHTML =
+
+    "📅 Trainingstage: " + profile.trainingDays + " Tage/Woche";
+
+
+    document.getElementById("viewWeekdays").innerHTML =
+
+    "🗓️ Trainingstage: " +
+
+    (profile.weekdays ? profile.weekdays.join(", ") : "");
+
+
+
+    document.getElementById("profileView").style.display = "block";
+
+
+}
+
+
+
+
+
+window.onload = function(){
+
+
+
+    document.getElementById("profile").style.display = "none";
+
+    document.getElementById("profileView").style.display = "none";
+
+    document.getElementById("weeks").style.display = "none";
+
+    document.getElementById("feedback").style.display = "none";
+
+    document.getElementById("progress").style.display = "none";
+
+
+
+    loadProfile();
+
+
+};
