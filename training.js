@@ -115,3 +115,7 @@ window.onload = function() {
     applyPermissions();
 
 };
+
+function goBack() {
+    window.location.href = "athlete.html";
+}
