@@ -1,3 +1,7 @@
+let urlParams = new URLSearchParams(window.location.search);
+
+let currentWeek = urlParams.get("week") || "1";
+
 let currentRole = localStorage.getItem("strideLabRole") || "athlete";
 
 
@@ -68,7 +72,7 @@ function saveTraining() {
 
 
     localStorage.setItem(
-        "strideLabTraining",
+        "strideLabTrainingWeek"+currentWeek,
         JSON.stringify(trainingData)
     );
 
