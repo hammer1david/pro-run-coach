@@ -100,16 +100,15 @@ function toggleProgress() {
 
 }
 
-
 function saveProfile() {
+
+    alert("saveProfile gestartet");
 
     let fields = document.querySelectorAll(
         "#profile input, #profile textarea"
     );
 
-
     let profile = [];
-
 
     fields.forEach(function(field) {
 
@@ -117,16 +116,19 @@ function saveProfile() {
 
     });
 
+    alert(JSON.stringify(profile));
 
     localStorage.setItem(
         "strideLabProfile",
         JSON.stringify(profile)
     );
 
+    alert("gespeichert");
 
     lockProfile();
 
 }
+
 
 
 function lockProfile() {
