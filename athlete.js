@@ -38,6 +38,7 @@ function saveProfile() {
 
 
     lockProfile();
+    showProfileView(profile);
 
 }
 
@@ -81,6 +82,7 @@ function loadProfile() {
 
 
         lockProfile();
+        showProfileView(profile);
 
 
 
@@ -188,3 +190,34 @@ function editProfile() {
     "✏️ Profil bearbeiten";
 
 }
+function showProfileView(profile) {
+
+    document.getElementById("viewName").innerHTML =
+    "👤 Name: " + profile.name;
+
+
+    document.getElementById("viewAge").innerHTML =
+    "🎂 Alter: " + profile.age;
+
+
+    document.getElementById("viewTimes").innerHTML =
+    "🏁 Bestzeiten: " + profile.times;
+
+
+    document.getElementById("viewGoals").innerHTML =
+    "🎯 Ziele: " + profile.goals;
+
+
+    document.getElementById("viewTrainingDays").innerHTML =
+    "📅 Trainingstage: " + profile.trainingDays + " Tage/Woche";
+
+
+    document.getElementById("viewWeekdays").innerHTML =
+    "🗓️ Trainingstage: " + profile.weekdays.join(", ");
+
+
+    document.getElementById("profileView").style.display =
+    "block";
+
+}
+
