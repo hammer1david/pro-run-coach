@@ -26,9 +26,8 @@
 
 
 <button onclick="goBack()">
-⬅️ Zurück zum Profil
+⬅ Zurück
 </button>
-
 
 
 <div class="card">
@@ -38,18 +37,263 @@ Woche
 </h2>
 
 
-<div id="trainingList">
+<p id="dateRange"></p>
 
-<p>Noch keine Trainings eingetragen</p>
+
+<h3>
+🎯 Ziel:
+</h3>
+
+
+<textarea id="goal" disabled placeholder="Ziel der Woche"></textarea>
+
 
 </div>
 
 
-</div>
 
+
+
+<div class="card">
+
+
+<h2>
+Trainingsplan
+</h2>
+
+
+
+<table border="1" width="100%">
+
+
+<tr>
+
+<th>
+Tag
+</th>
+
+<th>
+Training
+</th>
+
+</tr>
+
+
+<tr>
+
+<td>
+Montag
+</td>
+
+<td>
+
+<textarea class="training" data-day="Montag"
+placeholder="Training Montag"></textarea>
+
+
+<p>
+📝 Athleten Notiz:
+</p>
+
+
+<textarea class="note" data-day="Montag"
+placeholder="Wie hat sich das Training angefühlt?"></textarea>
+
+
+</td>
+
+</tr>
+
+
+
+
+<tr>
+
+<td>
+Dienstag
+</td>
+
+<td>
+
+<textarea class="training" data-day="Dienstag"
+placeholder="Training Dienstag"></textarea>
+
+
+<p>
+📝 Athleten Notiz:
+</p>
+
+
+<textarea class="note" data-day="Dienstag"
+placeholder="Wie hat sich das Training angefühlt?"></textarea>
+
+
+</td>
+
+</tr>
+
+
+
+
+
+<tr>
+
+<td>
+Mittwoch
+</td>
+
+<td>
+
+<textarea class="training" data-day="Mittwoch"
+placeholder="Training Mittwoch"></textarea>
+
+
+<p>
+📝 Athleten Notiz:
+</p>
+
+
+<textarea class="note" data-day="Mittwoch"
+placeholder="Wie hat sich das Training angefühlt?"></textarea>
+
+
+</td>
+
+</tr>
+
+
+
+
+
+<tr>
+
+<td>
+Donnerstag
+</td>
+
+<td>
+
+<textarea class="training" data-day="Donnerstag"
+placeholder="Training Donnerstag"></textarea>
+
+
+<p>
+📝 Athleten Notiz:
+</p>
+
+
+<textarea class="note" data-day="Donnerstag"
+placeholder="Wie hat sich das Training angefühlt?"></textarea>
+
+
+</td>
+
+</tr>
+
+
+
+
+
+<tr>
+
+<td>
+Freitag
+</td>
+
+<td>
+
+<textarea class="training" data-day="Freitag"
+placeholder="Training Freitag"></textarea>
+
+
+<p>
+📝 Athleten Notiz:
+</p>
+
+
+<textarea class="note" data-day="Freitag"
+placeholder="Wie hat sich das Training angefühlt?"></textarea>
+
+
+</td>
+
+</tr>
+
+
+
+
+
+<tr>
+
+<td>
+Samstag
+</td>
+
+<td>
+
+<textarea class="training" data-day="Samstag"
+placeholder="Training Samstag"></textarea>
+
+
+<p>
+📝 Athleten Notiz:
+</p>
+
+
+<textarea class="note" data-day="Samstag"
+placeholder="Wie hat sich das Training angefühlt?"></textarea>
+
+
+</td>
+
+</tr>
+
+
+
+
+
+<tr>
+
+<td>
+Sonntag
+</td>
+
+<td>
+
+<textarea class="training" data-day="Sonntag"
+placeholder="Training Sonntag"></textarea>
+
+
+<p>
+📝 Athleten Notiz:
+</p>
+
+
+<textarea class="note" data-day="Sonntag"
+placeholder="Wie hat sich das Training angefühlt?"></textarea>
+
+
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+
+<button id="saveButton" onclick="saveTraining()">
+💾 Training speichern
+</button>
+
+
+
+</div>
 
 
 </section>
+
 
 
 
