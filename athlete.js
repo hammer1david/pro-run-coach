@@ -77,10 +77,9 @@ let allProfiles =
 JSON.parse(localStorage.getItem("strideLabProfiles")) || {};
 
 
-let savedProfile =
-allProfiles[currentAthlete]
-? JSON.stringify(allProfiles[currentAthlete])
-: null;
+let savedProfile = localStorage.getItem(
+    "strideLabProfile_" + athlete
+);
 
     if(savedProfile) {
 
