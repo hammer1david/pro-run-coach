@@ -1,4 +1,4 @@
-
+alert("athlete.js geladen");
 function loadProfile() {
 
     let savedProfile =
