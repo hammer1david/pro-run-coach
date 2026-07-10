@@ -1,12 +1,11 @@
-let currentAthlete = "default";
-
-
 let params = new URLSearchParams(window.location.search);
 
+let athlete = params.get("athlete");
 
-if(params.get("athlete")) {
 
-    currentAthlete = params.get("athlete");
+if(!athlete){
+
+athlete = "default";
 
 }
 
