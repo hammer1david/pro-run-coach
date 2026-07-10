@@ -2,8 +2,10 @@
 <html>
 
 <head>
-    <title>StrideLab Athlete</title>
-    <link rel="stylesheet" href="style.css">
+
+<title>StrideLab Athlete</title>
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 
@@ -18,14 +20,19 @@
 
 </header>
 
+
+
 <button id="backToCoach" onclick="goBackToCoach()" style="display:none;">
 ⬅ Zurück zum Coach
 </button>
+
+
 
 <section>
 
 
 <h2>Willkommen Athlet 👋</h2>
+
 
 
 
@@ -41,31 +48,31 @@
 <div id="profile" style="display:none;">
 
 
-<p>
-Name:
-</p>
+<p>Name:</p>
+
 <input id="profileName" placeholder="Dein Name">
 
 
 
-<p>
-Alter:
-</p>
+<p>Alter:</p>
+
 <input id="profileAge" type="number" placeholder="Alter">
 
 
 
-<p>
-Bestzeiten:
-</p>
-<textarea id="profileTimes" placeholder="z.B. 1500m: 3:55&#10;5km: 14:40&#10;10km: 31:20"></textarea>
+<p>Bestzeiten:</p>
+
+<textarea id="profileTimes"
+placeholder="z.B. 1500m: 3:55
+5km: 14:40
+10km: 31:20"></textarea>
 
 
 
-<p>
-Ziele:
-</p>
-<textarea id="profileGoals" placeholder="Was möchtest du erreichen?"></textarea>
+<p>Ziele:</p>
+
+<textarea id="profileGoals"
+placeholder="Was möchtest du erreichen?"></textarea>
 
 
 
@@ -73,9 +80,8 @@ Ziele:
 
 
 
-<p>
-Anzahl Trainingstage pro Woche:
-</p>
+<p>Anzahl Trainingstage pro Woche:</p>
+
 
 <select id="trainingDays">
 
@@ -89,9 +95,7 @@ Anzahl Trainingstage pro Woche:
 
 
 
-<p>
-Gewünschte Trainingstage:
-</p>
+<p>Gewünschte Trainingstage:</p>
 
 
 <label>
@@ -140,12 +144,19 @@ Sonntag
 
 
 
-<p id="profileStatus"></p>
+<p id="profileStatus">
+</p>
+
+
 
 
 <div id="profileView" class="card" style="display:none;">
 
-<h3>🏃 Athletenprofil</h3>
+
+<h3>
+🏃 Athletenprofil
+</h3>
+
 
 <p id="viewName"></p>
 
@@ -160,16 +171,22 @@ Sonntag
 <p id="viewWeekdays"></p>
 
 
+
 <button onclick="editProfile()">
 ✏️ Profil bearbeiten
 </button>
+
+
 </div>
+
 
 
 
 <button id="saveButton" onclick="saveProfile()">
 Profil speichern
 </button>
+
+
 
 </div>
 
@@ -188,55 +205,36 @@ Profil speichern
 
 
 
-<div id="weeks">
+<div id="weeks" style="display:none;">
 
 
 
-<a href="training.html?week=1">
-
-<button>
+<button onclick="openWeek(1)">
 Woche 1
 </button>
 
-</a>
 
-
-
-<a href="training.html?week=2">
-
-<button>
+<button onclick="openWeek(2)">
 Woche 2
 </button>
 
-</a>
 
-
-
-<a href="training.html?week=3">
-
-<button>
+<button onclick="openWeek(3)">
 Woche 3
 </button>
 
-</a>
 
-
-
-<a href="training.html?week=4">
-
-<button>
+<button onclick="openWeek(4)">
 Woche 4
 </button>
 
-</a>
 
+
+</div>
 
 
 </div>
 
-
-
-</div>
 
 
 
@@ -253,14 +251,17 @@ Woche 4
 
 
 
-<div id="feedback">
-
-
-<textarea placeholder="Wie hat sich das Training angefühlt?"></textarea>
+<div id="feedback" style="display:none;">
 
 
 
-<textarea placeholder="Schlaf, Beine, Gesundheit..."></textarea>
+<textarea placeholder="Wie hat sich das Training angefühlt?">
+</textarea>
+
+
+
+<textarea placeholder="Schlaf, Beine, Gesundheit...">
+</textarea>
 
 
 
@@ -273,8 +274,9 @@ Feedback speichern
 </div>
 
 
-
 </div>
+
+
 
 
 
@@ -291,7 +293,8 @@ Feedback speichern
 
 
 
-<div id="progress">
+<div id="progress" style="display:none;">
+
 
 
 <p>
@@ -313,8 +316,8 @@ Entwicklung:
 </div>
 
 
-
 </div>
+
 
 
 
