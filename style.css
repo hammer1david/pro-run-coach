@@ -581,3 +581,132 @@ button {
     }
 
 }
+/* Werbe Box */
+
+
+.hero-box {
+
+    max-width:900px;
+
+    margin:30px auto;
+
+    padding:35px;
+
+    text-align:center;
+
+    background:
+    rgba(255,255,255,0.85);
+
+    color:#0f172a;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,0.15);
+
+}
+
+
+
+.hero-box h2 {
+
+    color:#2563eb;
+
+    font-size:32px;
+
+}
+
+
+
+
+/* Video */
+
+
+.video-box {
+
+    max-width:900px;
+
+    margin:30px auto;
+
+    background:
+    rgba(255,255,255,0.75);
+
+    padding:25px;
+
+    border-radius:22px;
+
+    color:#0f172a;
+
+}
+
+
+
+.video-box video {
+
+    width:100%;
+
+    border-radius:15px;
+
+}
+
+
+
+
+/* Login im Header */
+
+
+.header-login {
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    width:260px;
+
+    background:
+    rgba(255,255,255,0.85);
+
+    padding:15px;
+
+    border-radius:18px;
+
+    color:#0f172a;
+
+}
+
+
+
+.header-login input {
+
+    margin-bottom:8px;
+
+}
+
+
+
+.header-login button {
+
+    width:100%;
+
+}
+
+
+
+
+@media(max-width:800px){
+
+.header-login {
+
+    position:relative;
+
+    top:auto;
+
+    right:auto;
+
+    margin:20px auto;
+
+}
+
+}
