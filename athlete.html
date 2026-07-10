@@ -29,63 +29,81 @@
 
 <div class="card">
 
+
 <h3 onclick="toggleProfile()">
 👤 Profil ▼
 </h3>
 
 
+
 <div id="profile">
+
 
 <p>
 Name:
 </p>
 
-<input placeholder="Dein Name">
+<input id="profileName" placeholder="Dein Name">
+
 
 
 <p>
 Ziel:
 </p>
 
-<input placeholder="z.B. 1500m - 3:40">
+<input id="profileGoal" placeholder="z.B. 1500m - 3:40">
+
 
 
 <p>
 Distanz:
 </p>
 
-<input placeholder="5 km / 10 km / Marathon">
+<input id="profileDistance" placeholder="5 km / 10 km / Marathon">
+
 
 
 <p>
 Bestzeit:
 </p>
 
-<input placeholder="PB">
+<input id="profilePB" placeholder="PB">
+
 
 
 <p>
 Trainingsziel:
 </p>
 
-<textarea placeholder="Was möchtest du erreichen?"></textarea>
+<textarea id="profileTarget" placeholder="Was möchtest du erreichen?"></textarea>
+
 
 
 </div>
+
+
+
 <p id="profileStatus">
 ⚠️ Profil noch nicht ausgefüllt
 </p>
 
+
+
 <button onclick="saveProfile()">
 Profil speichern
 </button>
+
 
 <button onclick="editProfile()">
 Profil bearbeiten
 </button>
 
 
+
 </div>
+
+
+
 
 
 
@@ -98,41 +116,58 @@ Profil bearbeiten
 </h3>
 
 
+
 <div id="weeks">
 
 
+
 <a href="training.html?week=1">
+
 <button>
 Woche 1
 </button>
+
 </a>
+
 
 
 <a href="training.html?week=2">
+
 <button>
 Woche 2
 </button>
+
 </a>
+
 
 
 <a href="training.html?week=3">
+
 <button>
 Woche 3
 </button>
+
 </a>
+
 
 
 <a href="training.html?week=4">
+
 <button>
 Woche 4
 </button>
+
 </a>
 
 
+
 </div>
 
 
+
 </div>
+
+
 
 
 
@@ -146,13 +181,16 @@ Woche 4
 </h3>
 
 
+
 <div id="feedback">
 
 
 <textarea placeholder="Wie hat sich das Training angefühlt?"></textarea>
 
 
+
 <textarea placeholder="Schlaf, Beine, Gesundheit..."></textarea>
+
 
 
 <button>
@@ -160,10 +198,14 @@ Feedback speichern
 </button>
 
 
+
 </div>
 
 
+
 </div>
+
+
 
 
 
@@ -177,7 +219,8 @@ Feedback speichern
 </h3>
 
 
-<div>
+
+<div id="progress">
 
 
 <p>
@@ -195,10 +238,14 @@ Entwicklung:
 </p>
 
 
+
 </div>
 
 
+
 </div>
+
+
 
 
 
@@ -207,10 +254,10 @@ Entwicklung:
 
 
 
+
 <script src="athlete.js"></script>
 
 
 </body>
-
 
 </html>
