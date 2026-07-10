@@ -42,41 +42,96 @@
 <p>
 Name:
 </p>
-
 <input id="profileName" placeholder="Dein Name">
 
 
 
 <p>
-Ziel:
+Alter:
 </p>
-
-<input id="profileGoal" placeholder="z.B. 1500m - 3:40">
+<input id="profileAge" type="number" placeholder="Alter">
 
 
 
 <p>
-Distanz:
+Bestzeiten:
 </p>
-
-<input id="profileDistance" placeholder="5 km / 10 km / Marathon">
+<textarea id="profileTimes" placeholder="z.B. 1500m: 3:55&#10;5km: 14:40&#10;10km: 31:20"></textarea>
 
 
 
 <p>
-Bestzeit:
+Ziele:
 </p>
+<textarea id="profileGoals" placeholder="Was möchtest du erreichen?"></textarea>
 
-<input id="profilePB" placeholder="PB">
+
+
+<hr>
 
 
 
 <p>
-Trainingsziel:
+Anzahl Trainingstage pro Woche:
 </p>
 
-<textarea id="profileTarget" placeholder="Was möchtest du erreichen?"></textarea>
+<select id="trainingDays">
 
+<option value="3">3 Tage</option>
+<option value="4">4 Tage</option>
+<option value="5">5 Tage</option>
+<option value="6">6 Tage</option>
+<option value="7">7 Tage</option>
+
+</select>
+
+
+
+<p>
+Gewünschte Trainingstage:
+</p>
+
+
+<label>
+<input type="checkbox" class="weekday" value="Montag">
+Montag
+</label>
+
+
+<label>
+<input type="checkbox" class="weekday" value="Dienstag">
+Dienstag
+</label>
+
+
+<label>
+<input type="checkbox" class="weekday" value="Mittwoch">
+Mittwoch
+</label>
+
+
+<label>
+<input type="checkbox" class="weekday" value="Donnerstag">
+Donnerstag
+</label>
+
+
+<label>
+<input type="checkbox" class="weekday" value="Freitag">
+Freitag
+</label>
+
+
+<label>
+<input type="checkbox" class="weekday" value="Samstag">
+Samstag
+</label>
+
+
+<label>
+<input type="checkbox" class="weekday" value="Sonntag">
+Sonntag
+</label>
 
 
 </div>
