@@ -393,9 +393,6 @@ function showProfileView(profile){
 
 }
 
-
-
-
 window.onload = function() {
 
     // Alle Karten beim Start schließen
@@ -407,17 +404,18 @@ window.onload = function() {
 
 
     // Prüfen ob Coach geöffnet hat
-    let params = new URLSearchParams(window.location.search);
+    let urlParams = new URLSearchParams(window.location.search);
 
-    if(params.get("coach") === "true") {
+    let backButton = document.getElementById("backToCoach");
 
-        document.getElementById("backToCoach").style.display = "block";
+    if(urlParams.get("coach") === "true" && backButton) {
+
+        backButton.style.display = "block";
 
     }
 
 
     loadProfile();
-
 
 };
 
