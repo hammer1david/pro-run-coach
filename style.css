@@ -33,13 +33,7 @@ header {
 
     padding: 35px 20px;
 
-    background: linear-gradient(
-        135deg,
-        #0f766e,
-        #2563eb
-    );
-
-    border-radius: 0 0 30px 30px;
+    background: transparent;
 
 }
 
