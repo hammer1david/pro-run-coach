@@ -1,6 +1,7 @@
 let params = new URLSearchParams(window.location.search);
 
 let athlete = params.get("athlete");
+let isCoach = params.get("coach") === "true";
 
 if (!athlete) {
     athlete = "default";
