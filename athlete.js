@@ -106,19 +106,6 @@ function loadProfile() {
 
 function lockProfile() {
 
-    
-let fields = document.querySelectorAll(
-    "#profile input, #profile textarea, #profile select"
-);
-
-    fields.forEach(function(field){
-
-        field.disabled = true;
-
-    });
-
-function lockProfile() {
-
     let fields = document.querySelectorAll(
         "#profile input, #profile textarea, #profile select"
     );
@@ -131,8 +118,10 @@ function lockProfile() {
     });
 
 }
-        
-    function showStatus(text) {
+
+
+
+function showStatus(text) {
 
     document.getElementById("profileStatus").innerHTML = text;
 
@@ -142,12 +131,6 @@ function lockProfile() {
         document.getElementById("profileStatus").innerHTML = "";
 
     }, 5000);
-
-}
-
-
-    document.getElementById("profileStatus").innerHTML =
-    "✅ Profil gespeichert";
 
 }
 
