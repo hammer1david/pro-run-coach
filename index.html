@@ -18,7 +18,7 @@
 </button>
 
 
-<h2>StrideLab</h2>
+<h2>StrideLab 🏃</h2>
 
 
 <a href="#">
@@ -49,11 +49,11 @@
 </div>
 
 
-
-<button class="menu-button" onclick="toggleMenu()">
+<button id="menuButton" class="menu-button" onclick="toggleMenu()">
 ☰
 </button>
-    
+
+
 
 
 <header>
@@ -239,27 +239,23 @@ function coachLogin(){
 
 
 </script>
-
-
 <script>
 
 function toggleMenu(){
 
-let menu =
-document.getElementById("sideMenu");
+    let menu = document.getElementById("sideMenu");
 
+    if(menu.classList.contains("closed")){
 
-if(menu.style.left === "0px"){
+        menu.classList.remove("closed");
 
-    menu.style.left = "-300px";
+    }
 
-}
+    else {
 
-else {
+        menu.classList.add("closed");
 
-    menu.style.left = "0px";
-
-}
+    }
 
 }
 
