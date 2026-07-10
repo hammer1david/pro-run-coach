@@ -120,7 +120,6 @@ function lockProfile() {
 }
 
 
-
 function toggleProfile() {
 
     let section = document.getElementById("profile");
@@ -220,7 +219,8 @@ function showProfileView(profile) {
 
 
     document.getElementById("viewWeekdays").innerHTML =
-    "🗓️ Trainingstage: " + profile.weekdays.join(", ");
+    "🗓️ Trainingstage: " + 
+    (profile.weekdays ? profile.weekdays.join(", ") : "");
 
 
     document.getElementById("profileView").style.display =
