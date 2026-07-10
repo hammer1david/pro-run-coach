@@ -166,16 +166,26 @@ function toggleProfile() {
 
     let savedProfile = localStorage.getItem("strideLabProfile");
 
-    let section = document.getElementById("profile");
+    let profileView = document.getElementById("profileView");
 
-    // Wenn Profil schon gespeichert ist, nichts öffnen
-    if(savedProfile) {
+    let profileForm = document.getElementById("profile");
+
+
+    // Wenn noch kein Profil existiert -> Formular öffnen
+    if(!savedProfile) {
+
+        profileForm.style.display =
+        profileForm.style.display === "block"
+        ? "none"
+        : "block";
+
         return;
     }
 
 
-    section.style.display =
-    section.style.display === "block"
+    // Wenn Profil existiert -> Profilkarte ein/ausblenden
+    profileView.style.display =
+    profileView.style.display === "block"
     ? "none"
     : "block";
 
