@@ -96,17 +96,11 @@ function loadProfile() {
 
 }
 
-
-
-
-
 function lockProfile() {
-
 
     let fields = document.querySelectorAll(
         "#profile input, #profile textarea, #profile select"
     );
-
 
 
     fields.forEach(function(field){
@@ -116,10 +110,8 @@ function lockProfile() {
     });
 
 
-
     document.getElementById("profileStatus").innerHTML =
     "✅ Profil gespeichert";
-
 
 }
 
