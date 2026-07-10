@@ -38,11 +38,18 @@
 
 
 <p>
-Name:
+Benutzername:
 </p>
 
+<input id="athleteUsername" placeholder="Benutzername">
 
-<input id="athleteName" placeholder="Dein Name">
+
+
+<p>
+Passwort:
+</p>
+
+<input id="athletePassword" type="password" placeholder="Passwort">
 
 
 
@@ -65,7 +72,6 @@ Einloggen
 
 
 
-
 <br><br><br>
 
 
@@ -73,31 +79,24 @@ Einloggen
 
 
 
-<div class="card">
+<div class="card" style="padding:10px; font-size:14px;">
 
 
-<h3>
-🧑‍🏫 Coach Bereich
-</h3>
-
-
-<p>
-Nur für Trainer
-</p>
+<h4>
+🧑‍🏫 Coach Login
+</h4>
 
 
 
-<input id="coachPassword" type="password" placeholder="Passwort">
-
-
-
-<br><br>
+<input id="coachPassword" 
+type="password" 
+placeholder="Coach Passwort">
 
 
 
 <button onclick="coachLogin()">
 
-Coach Login
+Login
 
 </button>
 
@@ -117,21 +116,29 @@ Coach Login
 
 
 
+
 <script>
+
 
 
 function athleteLogin(){
 
 
-    let name =
-    document.getElementById("athleteName").value;
+    let username =
+    document.getElementById("athleteUsername").value;
 
 
 
-    if(name === ""){
+    let password =
+    document.getElementById("athletePassword").value;
 
 
-        alert("Bitte Namen eingeben");
+
+
+    if(username === "" || password === ""){
+
+
+        alert("Bitte Benutzername und Passwort eingeben");
 
 
         return;
@@ -140,12 +147,17 @@ function athleteLogin(){
 
 
 
+    // vorläufige Version:
+    // Benutzername wird als Athletenname verwendet
+
+
     window.location.href =
-    "athlete.html?athlete=" + name;
+    "athlete.html?athlete=" + username;
 
 
 
 }
+
 
 
 
@@ -160,8 +172,6 @@ function coachLogin(){
 
 
 
-    // vorläufiges Test-Passwort
-
     if(password === "coach123"){
 
 
@@ -171,11 +181,10 @@ function coachLogin(){
 
     }
 
-
     else {
 
 
-        alert("Falsches Passwort");
+        alert("Falsches Coach Passwort");
 
 
     }
@@ -187,7 +196,6 @@ function coachLogin(){
 
 
 </script>
-
 
 
 
