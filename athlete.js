@@ -36,18 +36,13 @@ function saveProfile() {
     );
 
 
+lockProfile();
+showProfileView(profile);
+showStatus("✅ Profil gespeichert");
 
-    lockProfile();
-    showProfileView(profile);
-    document.getElementById("profile").style.display = "none";
-    document.getElementById("saveButton").style.display = "none";
-
-
-setTimeout(function(){
-
-    document.getElementById("profileStatus").innerHTML = "";
-
-}, 5000);
+document.getElementById("profile").style.display = "none";
+document.getElementById("saveButton").style.display = "none";
+    
 
 }
 
@@ -122,7 +117,7 @@ let fields = document.querySelectorAll(
 
     });
 
-    function lockProfile() {
+function lockProfile() {
 
     let fields = document.querySelectorAll(
         "#profile input, #profile textarea, #profile select"
@@ -136,6 +131,7 @@ let fields = document.querySelectorAll(
     });
 
 }
+        
     function showStatus(text) {
 
     document.getElementById("profileStatus").innerHTML = text;
