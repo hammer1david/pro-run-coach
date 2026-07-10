@@ -58,3 +58,72 @@ function toggleProgress() {
     : "block";
 
 }
+function saveProfile() {
+
+    let fields = document.querySelectorAll(
+        "#profile input, #profile textarea"
+    );
+
+
+    let profile = [];
+
+
+    fields.forEach(function(field) {
+
+        profile.push(field.value);
+
+    });
+
+
+    localStorage.setItem(
+        "strideLabProfile",
+        JSON.stringify(profile)
+    );
+
+
+    lockProfile();
+
+}
+
+
+
+function lockProfile() {
+
+    let fields = document.querySelectorAll(
+        "#profile input, #profile textarea"
+    );
+
+
+    fields.forEach(function(field) {
+
+        field.disabled = true;
+
+    });
+
+
+    document.getElementById("profileStatus").innerHTML =
+    "✅ Profil gespeichert";
+
+}
+
+
+
+function editProfile() {
+
+    let fields = document.querySelectorAll(
+        "#profile input, #profile textarea"
+    );
+
+
+    fields.forEach(function(field) {
+
+        field.disabled = false;
+
+    });
+
+
+    document.getElementById("profileStatus").innerHTML =
+    "✏️ Profil bearbeiten";
+
+}
+
