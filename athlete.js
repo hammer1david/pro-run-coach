@@ -206,8 +206,7 @@ function editProfile() {
     document.getElementById("profileView").style.display = "none";
 
 
-    document.getElementById("profileStatus").innerHTML =
-    "✏️ Profil bearbeiten";
+    showStatus("✏️ Profil bearbeiten");
 
 }
 
