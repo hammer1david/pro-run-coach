@@ -3,6 +3,7 @@ function loadProfile() {
 
     let savedProfile =
     localStorage.getItem("strideLabProfile");
+    alert(savedProfile);
 
 
     if(savedProfile) {
