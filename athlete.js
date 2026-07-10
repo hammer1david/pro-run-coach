@@ -39,6 +39,7 @@ function saveProfile() {
 
     lockProfile();
     showProfileView(profile);
+    document.getElementById("profile").style.display = "none";
 
 }
 
@@ -83,6 +84,7 @@ function loadProfile() {
 
         lockProfile();
         showProfileView(profile);
+        document.getElementById("profile").style.display = "none";
 
 
 
@@ -170,8 +172,6 @@ function toggleProgress() {
 }
 
 
-
-
 function editProfile() {
 
     let fields = document.querySelectorAll(
@@ -186,10 +186,17 @@ function editProfile() {
     });
 
 
+    document.getElementById("profile").style.display = "block";
+
+    document.getElementById("profileView").style.display = "none";
+
+
     document.getElementById("profileStatus").innerHTML =
     "✏️ Profil bearbeiten";
 
 }
+
+
 function showProfileView(profile) {
 
     document.getElementById("viewName").innerHTML =
