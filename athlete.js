@@ -11,7 +11,6 @@ function saveProfile() {
     });
 
 
-
     let profile = {
 
         name: document.getElementById("profileName").value,
@@ -29,20 +28,22 @@ function saveProfile() {
     };
 
 
-
     localStorage.setItem(
         "strideLabProfile",
         JSON.stringify(profile)
     );
 
 
-lockProfile();
-showProfileView(profile);
-showStatus("✅ Profil gespeichert");
+    lockProfile();
 
-document.getElementById("profile").style.display = "none";
-document.getElementById("saveButton").style.display = "none";
-    
+    showProfileView(profile);
+
+    showStatus("✅ Profil gespeichert");
+
+
+    document.getElementById("profile").style.display = "none";
+
+    document.getElementById("saveButton").style.display = "none";
 
 }
 
@@ -56,7 +57,6 @@ function loadProfile() {
     let savedProfile = localStorage.getItem("strideLabProfile");
 
 
-
     if(savedProfile) {
 
 
@@ -64,48 +64,66 @@ function loadProfile() {
 
 
 
-        document.getElementById("profileName").value = profile.name || "";
+        document.getElementById("profileName").value =
+        profile.name || "";
 
-        document.getElementById("profileAge").value = profile.age || "";
 
-        document.getElementById("profileTimes").value = profile.times || "";
+        document.getElementById("profileAge").value =
+        profile.age || "";
 
-        document.getElementById("profileGoals").value = profile.goals || "";
 
-        document.getElementById("trainingDays").value = profile.trainingDays || "3";
+        document.getElementById("profileTimes").value =
+        profile.times || "";
+
+
+        document.getElementById("profileGoals").value =
+        profile.goals || "";
+
+
+        document.getElementById("trainingDays").value =
+        profile.trainingDays || "3";
 
 
 
         document.querySelectorAll(".weekday").forEach(function(day) {
 
-            day.checked = profile.weekdays &&
+            day.checked =
+            profile.weekdays &&
             profile.weekdays.includes(day.value);
 
         });
 
 
 
-        
-document.getElementById("profile").style.display = "none";
-document.getElementById("saveButton").style.display = "none";
-
-lockProfile();
-showProfileView(profile);
+        lockProfile();
 
 
-    } else {
+        showProfileView(profile);
+
+
+        document.getElementById("profile").style.display = "none";
+
+        document.getElementById("saveButton").style.display = "none";
+
+
+    }
+
+    else {
 
 
         document.getElementById("profileStatus").innerHTML =
         "⚠️ Profil noch nicht ausgefüllt";
 
-
     }
-
 
 }
 
+
+
+
+
 function lockProfile() {
+
 
     let fields = document.querySelectorAll(
         "#profile input, #profile textarea, #profile select"
@@ -122,7 +140,10 @@ function lockProfile() {
 
 
 
+
+
 function showStatus(text) {
+
 
     document.getElementById("profileStatus").innerHTML = text;
 
@@ -131,14 +152,18 @@ function showStatus(text) {
 
         document.getElementById("profileStatus").innerHTML = "";
 
-    }, 5000);
+    },5000);
 
 }
+
+
+
 
 
 function toggleProfile() {
 
     let section = document.getElementById("profile");
+
 
     section.style.display =
     section.style.display === "block"
@@ -146,6 +171,8 @@ function toggleProfile() {
     : "block";
 
 }
+
+
 
 
 
@@ -153,12 +180,15 @@ function toggleWeeks() {
 
     let section = document.getElementById("weeks");
 
+
     section.style.display =
     section.style.display === "block"
     ? "none"
     : "block";
 
 }
+
+
 
 
 
@@ -166,12 +196,15 @@ function toggleFeedback() {
 
     let section = document.getElementById("feedback");
 
+
     section.style.display =
     section.style.display === "block"
     ? "none"
     : "block";
 
 }
+
+
 
 
 
@@ -179,6 +212,7 @@ function toggleProgress() {
 
     let section = document.getElementById("progress");
 
+
     section.style.display =
     section.style.display === "block"
     ? "none"
@@ -187,22 +221,30 @@ function toggleProgress() {
 }
 
 
+
+
+
 function editProfile() {
+
 
     let fields = document.querySelectorAll(
         "#profile input, #profile textarea, #profile select"
     );
 
 
-    fields.forEach(function(field) {
+    fields.forEach(function(field){
 
         field.disabled = false;
 
     });
 
 
+
     document.getElementById("profile").style.display = "block";
+
+
     document.getElementById("saveButton").style.display = "block";
+
 
     document.getElementById("profileView").style.display = "none";
 
@@ -212,7 +254,11 @@ function editProfile() {
 }
 
 
+
+
+
 function showProfileView(profile) {
+
 
     document.getElementById("viewName").innerHTML =
     "👤 Name: " + profile.name;
@@ -235,8 +281,9 @@ function showProfileView(profile) {
 
 
     document.getElementById("viewWeekdays").innerHTML =
-    "🗓️ Trainingstage: " + 
+    "🗓️ Trainingstage: " +
     (profile.weekdays ? profile.weekdays.join(", ") : "");
+
 
 
     document.getElementById("profileView").style.display =
@@ -244,10 +291,15 @@ function showProfileView(profile) {
 
 }
 
+
+
+
+
 window.onload = function() {
 
+
     document.getElementById("profile").style.display = "none";
-    document.getElementById("profileView").style.display = "none";
+
 
     loadProfile();
 
