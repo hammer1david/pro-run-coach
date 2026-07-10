@@ -308,16 +308,37 @@ function showProfileView(profile) {
 
 }
 
-
-
-
-
 window.onload = function() {
 
-
+    // Profilbereich immer geschlossen starten
     document.getElementById("profile").style.display = "none";
 
 
-    loadProfile();
+    let savedProfile = localStorage.getItem("strideLabProfile");
+
+
+    if(savedProfile) {
+
+        let profile = JSON.parse(savedProfile);
+
+        showProfileView(profile);
+
+        // Profilkarte auch geschlossen starten
+        document.getElementById("profileView").style.display = "none";
+
+        document.getElementById("saveButton").style.display = "none";
+
+
+    } else {
+
+        document.getElementById("saveButton").style.display = "block";
+
+        document.getElementById("profileStatus").innerHTML =
+        "⚠️ Profil noch nicht ausgefüllt";
+
+    }
 
 };
+
+
+
