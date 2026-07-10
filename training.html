@@ -2,190 +2,59 @@
 <html>
 
 <head>
-    <title>StrideLab Training</title>
-    <link rel="stylesheet" href="style.css">
+
+<title>StrideLab Training</title>
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
 <header>
-    <h1>StrideLab</h1>
-    <p>Trainingsplan</p>
+
+<h1>StrideLab 🏃</h1>
+
+<p>Trainingsplan</p>
+
 </header>
-    
+
+
+
+<section>
+
+
 <button onclick="goBack()">
 ⬅️ Zurück zum Profil
 </button>
 
-<section>
-
-<h2>Wochenplan 🏃</h2>
-
 
 
 <div class="card">
 
-<h3>Montag</h3>
+<h2 id="weekTitle">
+Woche
+</h2>
 
-<label>Coach Training:</label>
-<textarea id="mondayTraining" placeholder="Training eingeben"></textarea>
 
-<label>Coach Anweisung:</label>
-<textarea id="mondayCoachNote" placeholder="Anweisungen vom Coach"></textarea>
+<div id="trainingList">
 
-<label>
-<input type="checkbox" id="mondayDone">
-Training erledigt
-</label>
-
-<label>Meine Notiz:</label>
-<textarea id="mondayAthleteNote" placeholder="Wie hat sich das Training angefühlt?"></textarea>
+<p>Noch keine Trainings eingetragen</p>
 
 </div>
 
 
-
-<div class="card">
-
-<h3>Dienstag</h3>
-
-<label>Coach Training:</label>
-<textarea id="tuesdayTraining" placeholder="Training eingeben"></textarea>
-
-<label>Coach Anweisung:</label>
-<textarea id="tuesdayCoachNote" placeholder="Anweisungen vom Coach"></textarea>
-
-<label>
-<input type="checkbox" id="tuesdayDone">
-Training erledigt
-</label>
-
-<label>Meine Notiz:</label>
-<textarea id="tuesdayAthleteNote" placeholder="Wie hat sich das Training angefühlt?"></textarea>
-
 </div>
 
-
-
-<div class="card">
-
-<h3>Mittwoch</h3>
-
-<label>Coach Training:</label>
-<textarea id="wednesdayTraining" placeholder="Training eingeben"></textarea>
-
-<label>Coach Anweisung:</label>
-<textarea id="wednesdayCoachNote" placeholder="Anweisungen vom Coach"></textarea>
-
-<label>
-<input type="checkbox" id="wednesdayDone">
-Training erledigt
-</label>
-
-<label>Meine Notiz:</label>
-<textarea id="wednesdayAthleteNote" placeholder="Wie hat sich das Training angefühlt?"></textarea>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>Donnerstag</h3>
-
-<label>Coach Training:</label>
-<textarea id="thursdayTraining" placeholder="Training eingeben"></textarea>
-
-<label>Coach Anweisung:</label>
-<textarea id="thursdayCoachNote" placeholder="Anweisungen vom Coach"></textarea>
-
-<label>
-<input type="checkbox" id="thursdayDone">
-Training erledigt
-</label>
-
-<label>Meine Notiz:</label>
-<textarea id="thursdayAthleteNote" placeholder="Wie hat sich das Training angefühlt?"></textarea>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>Freitag</h3>
-
-<label>Coach Training:</label>
-<textarea id="fridayTraining" placeholder="Training eingeben"></textarea>
-
-<label>Coach Anweisung:</label>
-<textarea id="fridayCoachNote" placeholder="Anweisungen vom Coach"></textarea>
-
-<label>
-<input type="checkbox" id="fridayDone">
-Training erledigt
-</label>
-
-<label>Meine Notiz:</label>
-<textarea id="fridayAthleteNote" placeholder="Wie hat sich das Training angefühlt?"></textarea>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>Samstag</h3>
-
-<label>Coach Training:</label>
-<textarea id="saturdayTraining" placeholder="Training eingeben"></textarea>
-
-<label>Coach Anweisung:</label>
-<textarea id="saturdayCoachNote" placeholder="Anweisungen vom Coach"></textarea>
-
-<label>
-<input type="checkbox" id="saturdayDone">
-Training erledigt
-</label>
-
-<label>Meine Notiz:</label>
-<textarea id="saturdayAthleteNote" placeholder="Wie hat sich das Training angefühlt?"></textarea>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>Sonntag</h3>
-
-<label>Coach Training:</label>
-<textarea id="sundayTraining" placeholder="Training eingeben"></textarea>
-
-<label>Coach Anweisung:</label>
-<textarea id="sundayCoachNote" placeholder="Anweisungen vom Coach"></textarea>
-
-<label>
-<input type="checkbox" id="sundayDone">
-Training erledigt
-</label>
-
-<label>Meine Notiz:</label>
-<textarea id="sundayAthleteNote" placeholder="Wie hat sich das Training angefühlt?"></textarea>
-
-</div>
-
-
-
-<button onclick="saveTraining()">
-Speichern
-</button>
 
 
 </section>
 
 
+
 <script src="training.js"></script>
+
 
 </body>
 
