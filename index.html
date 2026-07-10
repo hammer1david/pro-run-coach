@@ -11,48 +11,6 @@
 
 
 <body>
-    <div id="sideMenu" class="side-menu">
-
-<button class="close-menu" onclick="toggleMenu()">
-✕
-</button>
-
-
-<h2>StrideLab 🏃</h2>
-
-
-<a href="#">
-🏃 Über StrideLab
-</a>
-
-
-<a href="#">
-📋 Trainingspläne kaufen
-</a>
-
-
-<a href="#">
-📚 E-Books
-</a>
-
-
-<a href="#">
-🧑‍🏫 Coaching
-</a>
-
-
-<a href="#">
-📩 Kontakt
-</a>
-
-
-</div>
-
-
-<button id="menuButton" class="menu-button" onclick="toggleMenu()">
-☰
-</button>
-
 
 
 
@@ -63,6 +21,68 @@
 <p>Deine digitale Trainingsplattform</p>
 
 </header>
+
+
+
+
+
+<!-- Seitenleiste -->
+
+<div id="sideMenu" class="side-menu">
+
+
+<button class="close-menu" onclick="toggleMenu()">
+✕
+</button>
+
+
+
+<h2>StrideLab 🏃</h2>
+
+
+
+<a href="#">
+🏃 Über StrideLab
+</a>
+
+
+
+<a href="#">
+📋 Trainingspläne kaufen
+</a>
+
+
+
+<a href="#">
+📚 E-Books
+</a>
+
+
+
+<a href="#">
+🧑‍🏫 Coaching
+</a>
+
+
+
+<a href="#">
+📩 Kontakt
+</a>
+
+
+
+</div>
+
+
+
+
+
+<button id="menuButton" class="menu-button" onclick="toggleMenu()">
+☰
+</button>
+
+
+
 
 
 
@@ -84,7 +104,10 @@
 Benutzername:
 </p>
 
-<input id="athleteUsername" placeholder="Benutzername">
+
+<input 
+id="athleteUsername" 
+placeholder="Benutzername">
 
 
 
@@ -92,11 +115,13 @@ Benutzername:
 Passwort:
 </p>
 
-<input id="athletePassword" type="password" placeholder="Passwort">
+
+<input 
+id="athletePassword" 
+type="password" 
+placeholder="Passwort">
 
 
-
-<br><br>
 
 
 
@@ -115,14 +140,9 @@ Einloggen
 
 
 
-<br><br><br>
 
 
-
-
-
-
-<div class="card" style="padding:10px; font-size:14px;">
+<div class="card coach-login">
 
 
 <h4>
@@ -131,9 +151,12 @@ Einloggen
 
 
 
-<input id="coachPassword" 
-type="password" 
+<input 
+id="coachPassword"
+type="password"
 placeholder="Coach Passwort">
+
+
 
 
 
@@ -160,42 +183,37 @@ Login
 
 
 
-<script>
 
+<script>
 
 
 function athleteLogin(){
 
 
-    let username =
-    document.getElementById("athleteUsername").value;
+let username =
+document.getElementById("athleteUsername").value;
+
+
+let password =
+document.getElementById("athletePassword").value;
 
 
 
-    let password =
-    document.getElementById("athletePassword").value;
+if(username === "" || password === ""){
+
+
+alert("Bitte Benutzername und Passwort eingeben");
+
+
+return;
+
+
+}
 
 
 
-
-    if(username === "" || password === ""){
-
-
-        alert("Bitte Benutzername und Passwort eingeben");
-
-
-        return;
-
-    }
-
-
-
-    // vorläufige Version:
-    // Benutzername wird als Athletenname verwendet
-
-
-    window.location.href =
-    "athlete.html?athlete=" + username;
+window.location.href =
+"athlete.html?athlete=" + username;
 
 
 
@@ -210,27 +228,27 @@ function athleteLogin(){
 function coachLogin(){
 
 
-    let password =
-    document.getElementById("coachPassword").value;
+let password =
+document.getElementById("coachPassword").value;
 
 
 
-    if(password === "coach123"){
+if(password === "coach123"){
 
 
-        window.location.href =
-        "coach.html";
+window.location.href =
+"coach.html";
 
 
-    }
+}
 
-    else {
-
-
-        alert("Falsches Coach Passwort");
+else {
 
 
-    }
+alert("Falsches Coach Passwort");
+
+
+}
 
 
 
@@ -238,30 +256,44 @@ function coachLogin(){
 
 
 
-</script>
-<script>
+
+
+
 
 function toggleMenu(){
 
-    let menu = document.getElementById("sideMenu");
 
-    if(menu.classList.contains("closed")){
+let menu =
+document.getElementById("sideMenu");
 
-        menu.classList.remove("closed");
 
-    }
 
-    else {
+if(menu.classList.contains("closed")){
 
-        menu.classList.add("closed");
 
-    }
+menu.classList.remove("closed");
+
 
 }
 
+else {
+
+
+menu.classList.add("closed");
+
+
+}
+
+
+
+}
+
+
+
 </script>
 
-</body>
 
+
+</body>
 
 </html>
