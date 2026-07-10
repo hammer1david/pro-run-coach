@@ -93,6 +93,7 @@ function loadProfile() {
         lockProfile();
         showProfileView(profile);
         document.getElementById("profile").style.display = "none";
+        document.getElementById("saveButton").style.display = "none";
 
 
 
@@ -110,10 +111,10 @@ function loadProfile() {
 
 function lockProfile() {
 
-    let fields = document.querySelectorAll(
-        "#profile input, #profile textarea, #profile select"
-    );
-
+    
+let fields = document.querySelectorAll(
+    "#profile input, #profile textarea, #profile select"
+);
 
     fields.forEach(function(field){
 
