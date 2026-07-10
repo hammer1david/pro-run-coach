@@ -63,8 +63,16 @@ Athlet 3
 
 function openAthlete(name){
 
-    window.location.href =
-    "athlete.html?athlete=" + name + "&coach=true";
+let newTab = window.open(
+"athlete.html?athlete=" + name + "&coach=true",
+"_blank"
+);
+
+if(newTab){
+
+    newTab.focus();
+
+}
 
 }
 
