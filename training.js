@@ -9,16 +9,12 @@ let isCoach = params.get("coach") === "true";
 
 
 if(!athlete){
-
     athlete = "default";
-
 }
 
 
 if(!week){
-
     week = "1";
-
 }
 
 
@@ -26,6 +22,13 @@ if(!week){
 function getTrainingKey(){
 
     return "strideLabTraining_" + athlete + "_week" + week;
+
+}
+
+
+function getNotesKey(){
+
+    return "strideLabNotes_" + athlete + "_week" + week;
 
 }
 
@@ -40,13 +43,15 @@ function loadTraining(){
 
 
 
-    let saved = localStorage.getItem(getTrainingKey());
+    let savedTraining =
+    localStorage.getItem(getTrainingKey());
 
 
-    if(saved){
+
+    if(savedTraining){
 
 
-        let data = JSON.parse(saved);
+        let data = JSON.parse(savedTraining);
 
 
 
@@ -58,36 +63,59 @@ function loadTraining(){
         document.querySelectorAll(".training").forEach(function(field){
 
 
-            let day = field.dataset.day;
-
-
             field.value =
-            data.training[day] || "";
+            data.training[field.dataset.day] || "";
 
 
         });
-
-
-
-        document.querySelectorAll(".note").forEach(function(field){
-
-
-            let day = field.dataset.day;
-
-
-            field.value =
-            data.notes[day] || "";
-
-
-        });
-
 
 
     }
 
 
 
-    if(!isCoach){
+
+    let savedNotes =
+    localStorage.getItem(getNotesKey());
+
+
+
+    if(savedNotes){
+
+
+        let notes = JSON.parse(savedNotes);
+
+
+
+        document.querySelectorAll(".note").forEach(function(field){
+
+
+            field.value =
+            notes[field.dataset.day] || "";
+
+
+        });
+
+
+    }
+
+
+
+    if(isCoach){
+
+
+        document.getElementById("saveTrainingButton").style.display =
+        "block";
+
+
+        document.getElementById("saveNotesButton").style.display =
+        "none";
+
+
+    }
+
+
+    else {
 
 
         document.querySelectorAll(".training").forEach(function(field){
@@ -102,7 +130,12 @@ function loadTraining(){
 
 
 
-        document.getElementById("saveButton").style.display = "none";
+        document.getElementById("saveTrainingButton").style.display =
+        "none";
+
+
+        document.getElementById("saveNotesButton").style.display =
+        "block";
 
 
     }
@@ -119,16 +152,11 @@ function saveTraining(){
 
 
     if(!isCoach){
-
         return;
-
     }
 
 
-
     let training = {};
-
-    let notes = {};
 
 
 
@@ -143,18 +171,6 @@ function saveTraining(){
 
 
 
-    document.querySelectorAll(".note").forEach(function(field){
-
-
-        notes[field.dataset.day] =
-        field.value;
-
-
-    });
-
-
-
-
     let data = {
 
 
@@ -162,10 +178,7 @@ function saveTraining(){
         document.getElementById("goal").value,
 
 
-        training: training,
-
-
-        notes: notes
+        training: training
 
 
     };
@@ -191,41 +204,53 @@ function saveTraining(){
 
 
 
+function saveNotes(){
+
+
+    let notes = {};
+
+
+
+    document.querySelectorAll(".note").forEach(function(field){
+
+
+        notes[field.dataset.day] =
+        field.value;
+
+
+    });
+
+
+
+    localStorage.setItem(
+
+        getNotesKey(),
+
+        JSON.stringify(notes)
+
+    );
+
+
+    alert("📝 Notizen gespeichert");
+
+
+}
+
+
+
+
+
+
 function setDates(){
 
 
     let today = new Date();
 
 
-    let start =
-    new Date(today);
-
-
-    start.setDate(
-        today.getDate() +
-        ((1 - today.getDay() + 7) % 7)
-    );
-
-
-
-    let end =
-    new Date(start);
-
-
-    end.setDate(
-        start.getDate() + 6
-    );
-
-
-
     document.getElementById("dateRange").innerHTML =
 
     "📆 " +
-    start.toLocaleDateString("de-DE")
-    +
-    " - "
-    +
-    end.toLocaleDateString("de-DE");
+    today.toLocaleDateString("de-DE");
 
 
 }
@@ -251,19 +276,15 @@ function goBack(){
 
     }
 
-
 }
-
 
 
 
 
 window.onload = function(){
 
-
     setDates();
 
     loadTraining();
-
 
 };
