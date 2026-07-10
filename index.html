@@ -27,31 +27,12 @@
 <section>
 
 
-<div class="card">
-
-
-<h2>
-Willkommen bei StrideLab 👋
-</h2>
-
-
-<p>
-Erstelle Trainingspläne, verfolge Fortschritte und arbeite mit deinem Coach.
-</p>
-
-
-</div>
-
-
-
-
-
 
 <div class="card">
 
 
 <h2>
-Login
+🏃 Athleten Login
 </h2>
 
 
@@ -61,37 +42,7 @@ Name:
 </p>
 
 
-<input id="loginName" placeholder="Dein Name">
-
-
-
-
-
-
-<p>
-Rolle:
-</p>
-
-
-
-<select id="role">
-
-
-<option value="athlete">
-🏃 Athlet
-</option>
-
-
-
-<option value="coach">
-🧑‍🏫 Coach
-</option>
-
-
-</select>
-
-
-
+<input id="athleteName" placeholder="Dein Name">
 
 
 
@@ -99,9 +50,54 @@ Rolle:
 
 
 
-<button onclick="login()">
+<button onclick="athleteLogin()">
 
 Einloggen
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<br><br><br>
+
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+🧑‍🏫 Coach Bereich
+</h3>
+
+
+<p>
+Nur für Trainer
+</p>
+
+
+
+<input id="coachPassword" type="password" placeholder="Passwort">
+
+
+
+<br><br>
+
+
+
+<button onclick="coachLogin()">
+
+Coach Login
 
 </button>
 
@@ -124,22 +120,49 @@ Einloggen
 <script>
 
 
-function login(){
+function athleteLogin(){
 
 
     let name =
-    document.getElementById("loginName").value;
+    document.getElementById("athleteName").value;
 
 
 
-    let role =
-    document.getElementById("role").value;
+    if(name === ""){
+
+
+        alert("Bitte Namen eingeben");
+
+
+        return;
+
+    }
+
+
+
+    window.location.href =
+    "athlete.html?athlete=" + name;
+
+
+
+}
 
 
 
 
 
-    if(role === "coach"){
+
+function coachLogin(){
+
+
+    let password =
+    document.getElementById("coachPassword").value;
+
+
+
+    // vorläufiges Test-Passwort
+
+    if(password === "coach123"){
 
 
         window.location.href =
@@ -152,20 +175,7 @@ function login(){
     else {
 
 
-        if(name === ""){
-
-
-            alert("Bitte Namen eingeben");
-
-
-            return;
-
-        }
-
-
-
-        window.location.href =
-        "athlete.html?athlete=" + name;
+        alert("Falsches Passwort");
 
 
     }
@@ -177,6 +187,8 @@ function login(){
 
 
 </script>
+
+
 
 
 
