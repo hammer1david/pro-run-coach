@@ -122,6 +122,33 @@ let fields = document.querySelectorAll(
 
     });
 
+    function lockProfile() {
+
+    let fields = document.querySelectorAll(
+        "#profile input, #profile textarea, #profile select"
+    );
+
+
+    fields.forEach(function(field){
+
+        field.disabled = true;
+
+    });
+
+}
+    function showStatus(text) {
+
+    document.getElementById("profileStatus").innerHTML = text;
+
+
+    setTimeout(function(){
+
+        document.getElementById("profileStatus").innerHTML = "";
+
+    }, 5000);
+
+}
+
 
     document.getElementById("profileStatus").innerHTML =
     "✅ Profil gespeichert";
