@@ -414,6 +414,11 @@ window.onload = function(){
 
 
     loadProfile();
+    setTimeout(function(){
+
+    document.body.focus();
+
+},300);
 
 
 };
