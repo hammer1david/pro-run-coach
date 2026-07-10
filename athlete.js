@@ -120,7 +120,7 @@ function saveProfile() {
         "strideLabProfile",
         JSON.stringify(profile)
     );
-
+console.log(localStorage.getItem("strideLabProfile"));
 
     lockProfile();
 
