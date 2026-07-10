@@ -40,6 +40,14 @@ function saveProfile() {
     lockProfile();
     showProfileView(profile);
     document.getElementById("profile").style.display = "none";
+    document.getElementById("saveButton").style.display = "none";
+
+
+setTimeout(function(){
+
+    document.getElementById("profileStatus").innerHTML = "";
+
+}, 5000);
 
 }
 
@@ -186,6 +194,7 @@ function editProfile() {
 
 
     document.getElementById("profile").style.display = "block";
+    document.getElementById("saveButton").style.display = "block";
 
     document.getElementById("profileView").style.display = "none";
 
