@@ -1,46 +1,127 @@
-function loadProfile() {
+function saveProfile() {
 
-    let savedProfile = localStorage.getItem("strideLabProfile");
+    let weekdays = [];
 
-    if (savedProfile) {
+    document.querySelectorAll(".weekday").forEach(function(day) {
 
-        let profile = JSON.parse(savedProfile);
+        if(day.checked) {
+            weekdays.push(day.value);
+        }
 
-        let fields = document.querySelectorAll(
-            "#profile input, #profile textarea"
-        );
+    });
 
-        fields.forEach(function(field, index) {
 
-            if (profile[index] !== undefined) {
-                field.value = profile[index];
-            }
 
-        });
+    let profile = {
 
-        lockProfile();
+        name: document.getElementById("profileName").value,
 
-    } else {
+        age: document.getElementById("profileAge").value,
 
-        document.getElementById("profileStatus").innerHTML =
-        "⚠️ Profil noch nicht ausgefüllt";
+        times: document.getElementById("profileTimes").value,
 
-    }
+        goals: document.getElementById("profileGoals").value,
+
+        trainingDays: document.getElementById("trainingDays").value,
+
+        weekdays: weekdays
+
+    };
+
+
+
+    localStorage.setItem(
+        "strideLabProfile",
+        JSON.stringify(profile)
+    );
+
+
+
+    lockProfile();
 
 }
 
 
-window.onload = function() {
-
-    document.getElementById("profile").style.display = "none";
-    document.getElementById("weeks").style.display = "none";
-    document.getElementById("feedback").style.display = "none";
-    document.getElementById("progress").style.display = "none";
 
 
-    loadProfile();
 
-};
+function loadProfile() {
+
+
+    let savedProfile = localStorage.getItem("strideLabProfile");
+
+
+
+    if(savedProfile) {
+
+
+        let profile = JSON.parse(savedProfile);
+
+
+
+        document.getElementById("profileName").value = profile.name || "";
+
+        document.getElementById("profileAge").value = profile.age || "";
+
+        document.getElementById("profileTimes").value = profile.times || "";
+
+        document.getElementById("profileGoals").value = profile.goals || "";
+
+        document.getElementById("trainingDays").value = profile.trainingDays || "3";
+
+
+
+        document.querySelectorAll(".weekday").forEach(function(day) {
+
+            day.checked = profile.weekdays &&
+            profile.weekdays.includes(day.value);
+
+        });
+
+
+
+        lockProfile();
+
+
+
+    } else {
+
+
+        document.getElementById("profileStatus").innerHTML =
+        "⚠️ Profil noch nicht ausgefüllt";
+
+
+    }
+
+
+}
+
+
+
+
+
+function lockProfile() {
+
+
+    let fields = document.querySelectorAll(
+        "#profile input, #profile textarea, #profile select"
+    );
+
+
+
+    fields.forEach(function(field){
+
+        field.disabled = true;
+
+    });
+
+
+
+    document.getElementById("profileStatus").innerHTML =
+    "✅ Profil gespeichert";
+
+
+}
 
 
 
@@ -96,62 +177,11 @@ function toggleProgress() {
 
 
 
-function saveProfile() {
-
-
-    let fields = document.querySelectorAll(
-        "#profile input, #profile textarea"
-    );
-
-
-    let profile = [];
-
-
-    fields.forEach(function(field) {
-
-        profile.push(field.value);
-
-    });
-
-
-
-    localStorage.setItem(
-        "strideLabProfile",
-        JSON.stringify(profile)
-    );
-
-
-    lockProfile();
-
-}
-
-
-
-function lockProfile() {
-
-    let fields = document.querySelectorAll(
-        "#profile input, #profile textarea"
-    );
-
-
-    fields.forEach(function(field){
-
-        field.disabled = true;
-
-    });
-
-
-    document.getElementById("profileStatus").innerHTML =
-    "✅ Profil gespeichert";
-
-}
-
-
 
 function editProfile() {
 
     let fields = document.querySelectorAll(
-        "#profile input, #profile textarea"
+        "#profile input, #profile textarea, #profile select"
     );
 
 
@@ -166,4 +196,3 @@ function editProfile() {
     "✏️ Profil bearbeiten";
 
 }
-
