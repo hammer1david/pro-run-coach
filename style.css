@@ -564,30 +564,32 @@ table textarea {
 
     top: 0;
 
-    left: -300px;
+    left: 0;
 
     width: 280px;
 
-    height: 100%;
+    height: 100vh;
 
-    background:
-
-    rgba(255,255,255,0.95);
+    background: rgba(255,255,255,0.92);
 
     color: #0f172a;
 
     padding: 30px;
 
-    box-shadow:
+    box-shadow: 5px 0 25px rgba(0,0,0,0.2);
 
-    5px 0 25px rgba(0,0,0,0.25);
-
-    transition: 0.3s;
+    transition: 0.35s;
 
     z-index: 1000;
 
 }
 
+
+.side-menu.closed {
+
+    left: -300px;
+
+}
 
 
 .side-menu h2 {
@@ -595,7 +597,6 @@ table textarea {
     color:#2563eb;
 
 }
-
 
 
 .side-menu a {
@@ -608,14 +609,9 @@ table textarea {
 
     text-decoration:none;
 
-    font-size:18px;
-
-    border-bottom:
-
-    1px solid #e2e8f0;
+    border-bottom:1px solid #e2e8f0;
 
 }
-
 
 
 .side-menu a:hover {
@@ -623,8 +619,6 @@ table textarea {
     color:#2563eb;
 
 }
-
-
 
 
 .menu-button {
@@ -637,18 +631,15 @@ table textarea {
 
     z-index:900;
 
-    
-
     width:auto;
 
 }
 
 
-
 .close-menu {
 
-    background:#ef4444;
-
     width:auto;
+
+    background:#ef4444;
 
 }
