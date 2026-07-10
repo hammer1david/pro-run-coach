@@ -1,8 +1,7 @@
-/* Grunddesign */
-
 * {
     box-sizing: border-box;
 }
+
 
 
 body {
@@ -21,9 +20,10 @@ body {
         #60a5fa 100%
     );
 
-    color: #ffffff;
+    color: white;
 
 }
+
 
 
 
@@ -39,11 +39,15 @@ header {
 
 
 
+
 header h1 {
 
-    font-size: 42px;
+    font-size: 46px;
 
     margin: 0;
+
+    text-shadow:
+    0 4px 15px rgba(0,0,0,0.25);
 
 }
 
@@ -53,9 +57,10 @@ header p {
 
     font-size: 18px;
 
-    opacity: 0.9;
+    margin-top: 10px;
 
 }
+
 
 
 
@@ -74,23 +79,24 @@ section {
 
 
 
-/* Karten */
 
+/* Karten */
 
 .card {
 
-    background: rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.92);
 
-    backdrop-filter: blur(12px);
+    color: #0f172a;
 
-    border-radius: 20px;
+    border-radius: 22px;
 
     padding: 25px;
 
     margin: 20px 0;
 
     box-shadow:
-    0 10px 30px rgba(0,0,0,0.15);
+
+    0 15px 35px rgba(0,0,0,0.18);
 
 }
 
@@ -98,54 +104,15 @@ section {
 
 
 .card h2,
-.card h3 {
+.card h3,
+.card h4 {
+
+    color: #1e3a8a;
 
     margin-top: 0;
 
 }
 
-
-
-
-
-/* Buttons */
-
-
-button {
-
-    background: linear-gradient(
-        135deg,
-        #22c55e,
-        #16a34a
-    );
-
-    color: white;
-
-    border: none;
-
-    padding: 14px 24px;
-
-    border-radius: 12px;
-
-    font-size: 16px;
-
-    cursor: pointer;
-
-    margin: 8px 5px;
-
-    transition: 0.2s;
-
-}
-
-
-
-button:hover {
-
-    transform: translateY(-2px);
-
-    opacity: 0.9;
-
-}
 
 
 
@@ -167,13 +134,25 @@ select {
 
     border-radius: 12px;
 
-    border: 1px solid #475569;
+    border: 1px solid #cbd5e1;
 
-    background: #0f172a;
+    background: #ffffff;
 
-    color: white;
+    color: #0f172a;
 
     font-size: 16px;
+
+
+}
+
+
+
+input::placeholder,
+textarea::placeholder {
+
+
+    color: #64748b;
+
 
 }
 
@@ -191,12 +170,51 @@ textarea {
 
 
 
-/* Profil */
+
+/* Buttons */
 
 
-#profileView {
+button {
 
-    background: #334155;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #22c55e,
+        #16a34a
+    );
+
+
+    color: white;
+
+    border: none;
+
+    padding: 14px 24px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    margin: 8px 5px;
+
+
+    transition: 0.2s;
+
+
+}
+
+
+
+button:hover {
+
+
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+
 
 }
 
@@ -204,14 +222,16 @@ textarea {
 
 
 
-/* Wochenplan */
+
+
+/* Wochen Buttons */
 
 
 #weeks button {
 
+
     width: 100%;
 
-    margin: 8px 0;
 
 }
 
@@ -219,16 +239,40 @@ textarea {
 
 
 
-/* Tabellen Training */
+
+
+/* Profil Ansicht */
+
+
+#profileView {
+
+
+    background:
+
+    #f1f5f9;
+
+
+}
+
+
+
+
+
+
+/* Training Tabelle */
 
 
 table {
+
 
     width: 100%;
 
     border-collapse: collapse;
 
-    background: #1e293b;
+    background: white;
+
+    color: #0f172a;
+
 
 }
 
@@ -236,9 +280,13 @@ table {
 
 th {
 
+
     background: #2563eb;
 
+    color: white;
+
     padding: 15px;
+
 
 }
 
@@ -246,9 +294,11 @@ th {
 
 td {
 
+
     padding: 15px;
 
     vertical-align: top;
+
 
 }
 
@@ -256,24 +306,13 @@ td {
 
 table textarea {
 
+
     min-height: 150px;
 
-}
-
-
-
-
-
-/* Kleine Coach Box */
-
-
-.coach-login {
-
-    opacity: 0.8;
-
-    transform: scale(0.9);
 
 }
+
+
 
 
 
@@ -283,14 +322,38 @@ table textarea {
 
 #backToCoach {
 
+
     background: #475569;
+
 
 }
 
 
 
 
-/* Mobile Optimierung */
+
+
+
+/* Coach Bereich kleiner */
+
+
+.coach-login {
+
+
+    transform: scale(0.9);
+
+    opacity: 0.9;
+
+
+}
+
+
+
+
+
+
+
+/* Mobile */
 
 
 @media(max-width:600px){
@@ -298,7 +361,7 @@ table textarea {
 
     header h1 {
 
-        font-size: 32px;
+        font-size: 34px;
 
     }
 
