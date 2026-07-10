@@ -86,7 +86,7 @@ function saveTraining() {
 window.onload = function() {
 
     let saved =
-    localStorage.getItem("strideLabTraining");
+    localStorage.getItem("strideLabTrainingWeek"+currentWeek);
 
 
     if(saved) {
