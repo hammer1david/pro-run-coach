@@ -89,6 +89,7 @@ function loadProfile() {
         showProfileView(profile);
         document.getElementById("profile").style.display = "none";
         document.getElementById("saveButton").style.display = "none";
+        document.getElementById("profileView").style.display = "block"
 
 
 
@@ -243,3 +244,11 @@ function showProfileView(profile) {
 
 }
 
+window.onload = function() {
+
+    document.getElementById("profile").style.display = "none";
+    document.getElementById("profileView").style.display = "none";
+
+    loadProfile();
+
+};
