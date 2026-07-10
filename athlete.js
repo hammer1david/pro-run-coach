@@ -396,29 +396,31 @@ function showProfileView(profile){
 
 
 
+window.onload = function() {
 
-window.onload = function(){
-
-
-
+    // Alle Karten beim Start schließen
     document.getElementById("profile").style.display = "none";
-
     document.getElementById("profileView").style.display = "none";
-
     document.getElementById("weeks").style.display = "none";
-
     document.getElementById("feedback").style.display = "none";
-
     document.getElementById("progress").style.display = "none";
 
 
+    // Prüfen ob Coach geöffnet hat
+    let params = new URLSearchParams(window.location.search);
+
+    if(params.get("coach") === "true") {
+
+        document.getElementById("backToCoach").style.display = "block";
+
+    }
+
 
     loadProfile();
-    setTimeout(function(){
-
-    document.body.focus();
-
-},300);
 
 
 };
+
+function goBackToCoach() {
+    window.location.href = "coach.html";
+}
