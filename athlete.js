@@ -85,12 +85,12 @@ function loadProfile() {
 
 
 
-        lockProfile();
-        showProfileView(profile);
-        document.getElementById("profile").style.display = "none";
-        document.getElementById("saveButton").style.display = "none";
-        document.getElementById("profileView").style.display = "block"
+        
+document.getElementById("profile").style.display = "none";
+document.getElementById("saveButton").style.display = "none";
 
+lockProfile();
+showProfileView(profile);
 
 
     } else {
