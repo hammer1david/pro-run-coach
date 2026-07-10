@@ -1,59 +1,186 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>StrideLab</title>
-    <link rel="stylesheet" href="style.css">
+
+<title>StrideLab</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
 <header>
-    <h1>StrideLab</h1>
-    <p>Built on elite training. Personalized for you.</p>
+
+<h1>StrideLab 🏃</h1>
+
+<p>Deine digitale Trainingsplattform</p>
+
 </header>
 
+
+
+
 <section>
-    <h2>Erstelle deinen persönlichen Trainingsplan</h2>
 
-    <label>Dein Ziel:</label>
-    <select id="distance">
-        <option>5 km</option>
-        <option>10 km</option>
-        <option>Halbmarathon</option>
-        <option>Marathon</option>
-    </select>
 
-    <br><br>
+<div class="card">
 
-    <label>Deine aktuelle Bestzeit:</label>
-    <input id="currentTime" placeholder="z.B. 20:00">
 
-    <br><br>
+<h2>
+Willkommen bei StrideLab 👋
+</h2>
 
-    <label>Deine Zielzeit:</label>
-    <input id="targetTime" placeholder="z.B. 18:00">
 
-    <br><br>
+<p>
+Erstelle Trainingspläne, verfolge Fortschritte und arbeite mit deinem Coach.
+</p>
 
-    <label>Trainingstage pro Woche:</label>
-    <select id="days">
-        <option>3 Tage</option>
-        <option>4 Tage</option>
-        <option>5 Tage</option>
-        <option>6 Tage</option>
-    </select>
 
-    <br><br>
+</div>
 
-    <button onclick="createPlan()">
-        Trainingsplan erstellen
-    </button>
 
-    <h3 id="result"></h3>
+
+
+
+
+<div class="card">
+
+
+<h2>
+Login
+</h2>
+
+
+
+<p>
+Name:
+</p>
+
+
+<input id="loginName" placeholder="Dein Name">
+
+
+
+
+
+
+<p>
+Rolle:
+</p>
+
+
+
+<select id="role">
+
+
+<option value="athlete">
+🏃 Athlet
+</option>
+
+
+
+<option value="coach">
+🧑‍🏫 Coach
+</option>
+
+
+</select>
+
+
+
+
+
+
+<br><br>
+
+
+
+<button onclick="login()">
+
+Einloggen
+
+</button>
+
+
+
+</div>
+
+
+
+
 
 </section>
 
-<script src="script.js"></script>
+
+
+
+
+
+
+<script>
+
+
+function login(){
+
+
+    let name =
+    document.getElementById("loginName").value;
+
+
+
+    let role =
+    document.getElementById("role").value;
+
+
+
+
+
+    if(role === "coach"){
+
+
+        window.location.href =
+        "coach.html";
+
+
+    }
+
+
+    else {
+
+
+        if(name === ""){
+
+
+            alert("Bitte Namen eingeben");
+
+
+            return;
+
+        }
+
+
+
+        window.location.href =
+        "athlete.html?athlete=" + name;
+
+
+    }
+
+
+
+}
+
+
+
+</script>
+
+
 
 </body>
+
+
 </html>
