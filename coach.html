@@ -2,87 +2,82 @@
 <html>
 
 <head>
-    <title>StrideLab Coach</title>
-    <link rel="stylesheet" href="style.css">
+
+<title>StrideLab Coach</title>
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
 <header>
-    <h1>StrideLab</h1>
-    <p>Coach Dashboard</p>
+
+<h1>StrideLab 🏃</h1>
+
+<p>Coach Plattform</p>
+
 </header>
+
 
 
 <section>
 
-<h2>Willkommen Coach 🧑‍🏫</h2>
 
+<h2>👨‍🏫 Athleten auswählen</h2>
 
-<div class="card">
-
-<h3>Athleten</h3>
-
-<p>
-Keine Athleten geladen.
-</p>
-
-<button onclick="loadProfile()">
-Athletenprofil laden
-</button>
-
-<div id="athleteProfile"></div>
-
-</div>
 
 
 <div class="card">
 
-<h3>Trainingsplan</h3>
 
-<p>Woche auswählen:</p>
+<select id="athleteSelect">
 
-
-<a href="training.html?week=1">
-<button>
-Woche 1
-</button>
-</a>
+<option value="">
+Athlet auswählen
+</option>
 
 
-<a href="training.html?week=2">
-<button>
-Woche 2
-</button>
-</a>
+<option value="David">
+David
+</option>
 
 
-<a href="training.html?week=3">
-<button>
-Woche 3
-</button>
-</a>
+<option value="Athlet2">
+Athlet 2
+</option>
 
 
-<a href="training.html?week=4">
-<button>
-Woche 4
-</button>
-</a>
+<option value="Athlet3">
+Athlet 3
+</option>
 
 
-<button onclick="addWeek()">
-+ Woche hinzufügen
+</select>
+
+
+
+<br><br>
+
+
+<button onclick="openAthlete()">
+
+Athlet öffnen
+
 </button>
 
 
 </div>
+
 
 
 </section>
 
 
+
 <script src="coach.js"></script>
+
 
 </body>
 
