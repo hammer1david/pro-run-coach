@@ -1,8 +1,4 @@
-window.onload = function() {
 
-    loadProfile();
-
-};
 function loadProfile() {
 
     let savedProfile =
@@ -40,6 +36,7 @@ function loadProfile() {
     }
 
 }
+
 window.onload = function() {
 
     document.getElementById("profile").style.display = "none";
@@ -47,8 +44,10 @@ window.onload = function() {
     document.getElementById("feedback").style.display = "none";
     document.getElementById("progress").style.display = "none";
 
-};
 
+    loadProfile();
+
+};
 
 
 function toggleProfile() {
