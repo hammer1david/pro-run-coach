@@ -1,42 +1,34 @@
-alert("athlete.js geladen");
 function loadProfile() {
 
-    let savedProfile =
-    localStorage.getItem("strideLabProfile");
-    alert(savedProfile);
+    let savedProfile = localStorage.getItem("strideLabProfile");
 
+    if (savedProfile) {
 
-    if(savedProfile) {
-
-        let profile =
-        JSON.parse(savedProfile);
-
+        let profile = JSON.parse(savedProfile);
 
         let fields = document.querySelectorAll(
             "#profile input, #profile textarea"
         );
 
+        fields.forEach(function(field, index) {
 
-        fields.forEach(function(field, index){
-
-            field.value = profile[index];
+            if (profile[index] !== undefined) {
+                field.value = profile[index];
+            }
 
         });
 
-
         lockProfile();
 
-
     } else {
-
 
         document.getElementById("profileStatus").innerHTML =
         "⚠️ Profil noch nicht ausgefüllt";
 
-
     }
 
 }
+
 
 window.onload = function() {
 
@@ -49,6 +41,7 @@ window.onload = function() {
     loadProfile();
 
 };
+
 
 
 function toggleProfile() {
@@ -101,15 +94,18 @@ function toggleProgress() {
 
 }
 
+
+
 function saveProfile() {
 
-    alert("saveProfile gestartet");
 
     let fields = document.querySelectorAll(
         "#profile input, #profile textarea"
     );
 
+
     let profile = [];
+
 
     fields.forEach(function(field) {
 
@@ -117,14 +113,13 @@ function saveProfile() {
 
     });
 
-    alert(JSON.stringify(profile));
+
 
     localStorage.setItem(
         "strideLabProfile",
         JSON.stringify(profile)
     );
 
-    alert("gespeichert");
 
     lockProfile();
 
@@ -138,9 +133,10 @@ function lockProfile() {
         "#profile input, #profile textarea"
     );
 
+
     fields.forEach(function(field){
 
-        field.setAttribute("disabled", "true");
+        field.disabled = true;
 
     });
 
