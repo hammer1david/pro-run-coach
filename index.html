@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 
 <head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>StrideLab</title>
 
@@ -9,191 +13,412 @@
 
 </head>
 
-
 <body>
 
 
+<!-- Navigation -->
 
-<header>
+<nav class="navbar">
 
-<h1>StrideLab 🏃</h1>
+<div class="logo">
 
-<p>Deine digitale Trainingsplattform</p>
-
-</header>
-
-  <div class="hero-box">
-
-<h2>
-🏃 Erreiche dein nächstes Laufziel
-</h2>
-
-<p>
-Professionelle Trainingspläne für 5km, 10km, Halbmarathon und Marathon.
-</p>
-
-<button onclick="register()">
-Jetzt registrieren
-</button>
+🏃 StrideLab
 
 </div>
 
 
+<div class="nav-links">
 
-<div class="video-box">
+<a href="#">Startseite</a>
 
-<h2>
-🎥 Über StrideLab
-</h2>
+<a href="#">Trainingspläne</a>
 
+<a href="#">E-Books</a>
 
-<video controls>
+<a href="#">Coaching</a>
 
-<source src="video.mp4" type="video/mp4">
-
-Dein Browser unterstützt kein Video.
-
-</video>
-
+<a href="#">Kontakt</a>
 
 </div>
 
 
+<div class="login-box">
 
-
-
-<!-- Seitenleiste -->
-
-<div id="sideMenu" class="side-menu">
-
-
-<button class="close-menu" onclick="toggleMenu()">
-✕
-</button>
-
-
-
-<h2>StrideLab 🏃</h2>
-
-
-
-<a href="#">
-🏃 Über StrideLab
-</a>
-
-
-
-<a href="#">
-📋 Trainingspläne kaufen
-</a>
-
-
-
-<a href="#">
-📚 E-Books
-</a>
-
-
-
-<a href="#">
-🧑‍🏫 Coaching
-</a>
-
-
-
-<a href="#">
-📩 Kontakt
-</a>
-
-
-
-</div>
-
-
-
-
-
-<button id="menuButton" class="menu-button" onclick="toggleMenu()">
-☰
-</button>
-
-
-
-
-
-<div id="mainContent">
-
-<section>
-
-
-
-<div class="header-login">
-
-<h3>
-🏃 Athleten Login
-</h3>
-
-
-
-<p>
-Benutzername:
-</p>
-
-
-<input 
-id="athleteUsername" 
+<input
+id="athleteUsername"
+type="text"
 placeholder="Benutzername">
 
-
-
-<p>
-Passwort:
-</p>
-
-
-<input 
-id="athletePassword" 
-type="password" 
+<input
+id="athletePassword"
+type="password"
 placeholder="Passwort">
-
-
-
-
 
 <button onclick="athleteLogin()">
 
-Einloggen
+Login
 
+</button>
+
+</div>
+
+</nav>
+
+
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>
+
+Train smarter.<br>
+
+Run faster.
+
+</h1>
+
+<p>
+
+Personalisierte Trainingspläne
+
+für 5 km, 10 km,
+
+Halbmarathon und Marathon.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<button
+class="primary-button"
+onclick="register()">
+
+Jetzt kostenlos starten
+
+</button>
+
+<button class="secondary-button">
+
+Trainingspläne entdecken
+
+</button>
+
+</div>
+
+
+<div class="hero-stats">
+
+<div>
+
+<h2>500+</h2>
+
+<p>Athleten</p>
+
+</div>
+
+<div>
+
+<h2>25000+</h2>
+
+<p>Trainings</p>
+
+</div>
+
+<div>
+
+<h2>96%</h2>
+
+<p>Ziel erreicht</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="hero-right">
+
+<img
+src="hero-runner.jpg"
+alt="Runner">
+
+</div>
+
+</section>
+
+
+
+
+<!-- Video -->
+
+<section class="video-section">
+
+<h2>
+
+Warum StrideLab?
+
+</h2>
+
+<p>
+
+Erfahre in zwei Minuten,
+
+wie StrideLab dich schneller macht.
+
+</p>
+
+<div class="video-card">
+
+<video controls>
+
+<source
+src="video.mp4"
+type="video/mp4">
+
+</video>
+
+</div>
+
+</section>
+<!-- Features -->
+
+<section class="features">
+
+<h2>
+Warum StrideLab?
+</h2>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+
+<h3>🏃 Individuelle Trainingspläne</h3>
+
+<p>
+Jeder Trainingsplan wird auf dein Leistungsniveau und deine Ziele abgestimmt.
+</p>
+
+</div>
+
+
+
+<div class="feature-card">
+
+<h3>📈 Leistungsanalyse</h3>
+
+<p>
+Analysiere deine Entwicklung und verfolge deinen Fortschritt Woche für Woche.
+</p>
+
+</div>
+
+
+
+<div class="feature-card">
+
+<h3>🧠 KI-Unterstützung</h3>
+
+<p>
+Nutze intelligente Trainingsvorschläge und moderne Trainingssteuerung.
+</p>
+
+</div>
+
+
+
+<div class="feature-card">
+
+<h3>🏆 Wettkampfvorbereitung</h3>
+
+<p>
+Optimiere deine Form für deinen nächsten Wettkampf.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- Trainingspläne -->
+
+<section class="plans">
+
+<h2>
+Unsere Trainingspläne
+</h2>
+
+<div class="plan-grid">
+
+<div class="plan-card">
+
+<h3>5 km</h3>
+
+<p>Vom Anfänger bis unter 15 Minuten.</p>
+
+<button>
+Mehr erfahren
+</button>
+
+</div>
+
+
+<div class="plan-card">
+
+<h3>10 km</h3>
+
+<p>Professionelle Trainingsprogramme.</p>
+
+<button>
+Mehr erfahren
+</button>
+
+</div>
+
+
+<div class="plan-card">
+
+<h3>Halbmarathon</h3>
+
+<p>Strukturiert und leistungsorientiert.</p>
+
+<button>
+Mehr erfahren
+</button>
+
+</div>
+
+
+<div class="plan-card">
+
+<h3>Marathon</h3>
+
+<p>Von der ersten Ziellinie bis zur Bestzeit.</p>
+
+<button>
+Mehr erfahren
 </button>
 
 </div>
 
 </div>
 
+</section>
 
 
 
 
+<!-- E-Books -->
+
+<section class="ebooks">
+
+<h2>
+📚 E-Books
+</h2>
+
+<p>
+
+Lerne mehr über Training, Ernährung, Regeneration und Leistungsentwicklung.
+
+</p>
+
+<button>
+
+Alle E-Books ansehen
+
+</button>
+
+</section>
 
 
 
-<div class="card coach-login">
+
+<!-- Bewertungen -->
+
+<section class="reviews">
+
+<h2>
+Das sagen unsere Athleten
+</h2>
+
+<div class="review-grid">
+
+<div class="review-card">
+
+⭐⭐⭐⭐⭐
+
+<p>
+
+"Ich habe meine 5-km-Zeit innerhalb weniger Wochen deutlich verbessert."
+
+</p>
+
+<b>David</b>
+
+</div>
 
 
-<h4>
+
+<div class="review-card">
+
+⭐⭐⭐⭐⭐
+
+<p>
+
+"Professionelle Trainingspläne und hervorragende Betreuung."
+
+</p>
+
+<b>Anna</b>
+
+</div>
+
+
+
+<div class="review-card">
+
+⭐⭐⭐⭐⭐
+
+<p>
+
+"Die beste Laufplattform, die ich bisher genutzt habe."
+
+</p>
+
+<b>Michael</b>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- Coach Login -->
+
+<section class="coach-area">
+
+<div class="coach-login">
+
+<h3>
 🧑‍🏫 Coach Login
-</h4>
+</h3>
 
-
-
-<input 
+<input
 id="coachPassword"
 type="password"
 placeholder="Coach Passwort">
-
-
-
-
 
 <button onclick="coachLogin()">
 
@@ -201,137 +426,40 @@ Login
 
 </button>
 
-
-
 </div>
-
-
-
-
 
 </section>
 
-</div>
 
 
 
+<footer>
 
+<h2>
 
+🏃 StrideLab
 
+</h2>
 
-<script>
+<p>
 
+Train smarter. Run faster.
 
-function athleteLogin(){
+</p>
 
+<p>
 
-let username =
-document.getElementById("athleteUsername").value;
+© 2026 StrideLab
 
+</p>
 
-let password =
-document.getElementById("athletePassword").value;
+</footer>
 
 
 
-if(username === "" || password === ""){
 
 
-alert("Bitte Benutzername und Passwort eingeben");
-
-
-return;
-
-
-}
-
-
-
-window.location.href =
-"athlete.html?athlete=" + username;
-
-
-
-}
-
-
-
-
-
-
-
-function coachLogin(){
-
-
-let password =
-document.getElementById("coachPassword").value;
-
-
-
-if(password === "coach123"){
-
-
-window.location.href =
-"coach.html";
-
-
-}
-
-else {
-
-
-alert("Falsches Coach Passwort");
-
-
-}
-
-
-
-}
-
-
-
-
-
-
-
-function toggleMenu(){
-
-
-let menu =
-document.getElementById("sideMenu");
-
-
-
-if(menu.classList.contains("closed")){
-
-
-menu.classList.remove("closed");
-
-
-}
-
-else {
-
-
-menu.classList.add("closed");
-
-
-}
-
-
-
-}
-
-
-function register(){
-
-    window.location.href = "register.html";
-
-}
-</script>
-
-
+<script src="script.js"></script>
 
 </body>
 
