@@ -6,12 +6,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TWETE</title>
+<title>TWETE | Train Smarter</title>
 
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -20,50 +19,45 @@
 
 <body>
 
-
-<!-- NAVIGATION -->
+<header>
 
 <nav class="navbar">
 
 <div class="brand">
 
-<img src="Images/logo.png" class="logo" alt="TWETE Logo">
+<img src="images/logo.png" class="logo" alt="TWETE Logo">
 
-<img src="Images/twete.png" class="wordmark" alt="TWETE">
-
-</div>
-
-
-<div class="nav-links">
-
-<a href="#">Home</a>
-
-<a href="#">Features</a>
-
-<a href="#">Training</a>
-
-<a href="#">Pricing</a>
-
-<a href="#">Contact</a>
+<img src="images/twete.png" class="wordmark" alt="TWETE">
 
 </div>
 
+<ul class="nav-links">
 
-<div class="login-box">
+<li><a href="#">Home</a></li>
 
-<input
-id="athleteUsername"
-type="text"
-placeholder="Username">
+<li><a href="#features">Features</a></li>
 
-<input
-id="athletePassword"
-type="password"
-placeholder="Password">
+<li><a href="#training">Training</a></li>
 
-<button onclick="athleteLogin()">
+<li><a href="#pricing">Pricing</a></li>
+
+<li><a href="#reviews">Reviews</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<div class="nav-buttons">
+
+<button class="login-btn">
 
 Login
+
+</button>
+
+<button class="start-btn">
+
+Get Started
 
 </button>
 
@@ -71,157 +65,213 @@ Login
 
 </nav>
 
+</header>
 
 
-<!-- HERO -->
 
 <section class="hero">
 
+<div class="hero-background"></div>
+
+<div class="hero-overlay"></div>
+
+<div class="hero-container">
 
 <div class="hero-left">
 
-<span class="hero-tag">
+<div class="hero-badge">
 
 NEXT GENERATION RUNNING PLATFORM
 
-</span>
-
+</div>
 
 <h1>
 
-Science.<br>
+Train Smarter.<br>
 
-Performance.<br>
+Run Faster.<br>
 
-TWETE.
+<span>With TWETE.</span>
 
 </h1>
 
-
 <p>
 
-Personalized training plans powered by sports science,
-elite coaching and intelligent performance analysis.
-
-Everything you need to become a faster runner.
+Science-driven coaching, AI-powered insights and personalized training plans for every runner.
 
 </p>
 
-
 <div class="hero-buttons">
 
-<button class="primary-button">
+<button class="primary-btn">
 
-Get Started
+Start Free
 
 </button>
 
+<button class="secondary-btn">
 
-<button class="secondary-button">
-
-Explore Training
+Watch Demo
 
 </button>
 
 </div>
-
-
 
 <div class="hero-stats">
 
-<div>
+<div class="stat">
 
 <h2>500+</h2>
 
-<p>Athletes</p>
+<span>Athletes</span>
 
 </div>
 
-
-<div>
+<div class="stat">
 
 <h2>25K+</h2>
 
-<p>Completed Workouts</p>
+<span>Workouts</span>
 
 </div>
 
-
-<div>
+<div class="stat">
 
 <h2>96%</h2>
 
-<p>Goal Achievement</p>
+<span>Goal Success</span>
 
 </div>
 
 </div>
 
 </div>
-
-
 
 <div class="hero-right">
 
-<img
-src="Images/logo.png"
-class="hero-logo"
-alt="TWETE">
+<img src="images/runner.png" alt="Runner">
+
+</div>
 
 </div>
 
 </section>
-<!-- FEATURES -->
 
-<section class="features">
+<!-- ===========================
+FEATURES
+=========================== -->
 
-<h2>Why TWETE?</h2>
+<section class="features" id="features">
+
+<div class="section-header">
+
+<span>WHY TWETE</span>
+
+<h2>
+
+Everything you need to become a better runner.
+
+</h2>
+
+<p>
+
+Built for beginners, ambitious athletes and elite runners.
+
+</p>
+
+</div>
 
 <div class="feature-grid">
 
 <div class="feature-card">
 
-<h3>Personalized Training</h3>
+<div class="feature-icon">
+
+📈
+
+</div>
+
+<h3>
+
+Performance Analytics
+
+</h3>
 
 <p>
 
-Every training plan is individually adapted to your current fitness, experience and personal goals.
+Track every workout and visualize your progress with detailed performance metrics.
 
 </p>
 
 </div>
 
+
+
 <div class="feature-card">
 
-<h3>Performance Analytics</h3>
+<div class="feature-icon">
+
+🧠
+
+</div>
+
+<h3>
+
+AI Coaching
+
+</h3>
 
 <p>
 
-Track every workout, analyze your progress and discover where you can improve.
+Receive intelligent recommendations based on your training history and goals.
 
 </p>
 
 </div>
 
+
+
 <div class="feature-card">
 
-<h3>AI Coaching</h3>
+<div class="feature-icon">
+
+🏃
+
+</div>
+
+<h3>
+
+Personal Training
+
+</h3>
 
 <p>
 
-Receive intelligent training recommendations powered by sports science and artificial intelligence.
+Every training plan adapts to your current fitness and race distance.
 
 </p>
 
 </div>
 
+
+
 <div class="feature-card">
 
-<h3>Elite Coaches</h3>
+<div class="feature-icon">
+
+🏆
+
+</div>
+
+<h3>
+
+Elite Coaching
+
+</h3>
 
 <p>
 
-Train with plans created by experienced athletes and world-class coaches.
+Train with plans developed by experienced athletes and professional coaches.
 
 </p>
 
@@ -233,127 +283,426 @@ Train with plans created by experienced athletes and world-class coaches.
 
 
 
-<!-- TRAINING PROGRAMS -->
-
-<section class="plans">
-
-<h2>Training Programs</h2>
-
-<div class="plan-grid">
-
-<div class="plan-card">
-
-<h3>5K</h3>
-
-<p>
-
-From beginners to sub 15 minutes.
-
-</p>
-
-<button>
-
-Learn More
-
-</button>
-
-</div>
-
-<div class="plan-card">
-
-<h3>10K</h3>
-
-<p>
-
-Structured training plans for every performance level.
-
-</p>
-
-<button>
-
-Learn More
-
-</button>
-
-</div>
-
-<div class="plan-card">
-
-<h3>Half Marathon</h3>
-
-<p>
-
-Increase endurance and race performance.
-
-</p>
-
-<button>
-
-Learn More
-
-</button>
-
-</div>
-
-<div class="plan-card">
-
-<h3>Marathon</h3>
-
-<p>
-
-Prepare for your fastest marathon yet.
-
-</p>
-
-<button>
-
-Learn More
-
-</button>
-
-</div>
-
-</div>
-
-</section>
 
 
+<!-- ===========================
+DASHBOARD
+=========================== -->
 
-<!-- ACADEMY -->
+<section class="dashboard">
 
-<section class="ebooks">
+<div class="dashboard-left">
+
+<span class="small-title">
+
+YOUR TRAINING
+
+</span>
 
 <h2>
 
-TWETE Academy
+One platform.
+
+Every workout.
+
+Complete control.
 
 </h2>
 
 <p>
 
-Learn more about endurance training, nutrition, recovery and sports science.
+Plan workouts, monitor recovery, analyze performance and prepare for your next race — all in one place.
 
 </p>
 
-<button>
+<ul class="dashboard-list">
+
+<li>✔ Personalized weekly plans</li>
+
+<li>✔ Heart rate & pace analysis</li>
+
+<li>✔ AI recommendations</li>
+
+<li>✔ Coach feedback</li>
+
+<li>✔ Race prediction</li>
+
+</ul>
+
+<button class="primary-btn">
+
+Explore Dashboard
+
+</button>
+
+</div>
+
+
+
+<div class="dashboard-right">
+
+<img src="images/dashboard.png" alt="Dashboard Preview">
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- ===========================
+TRAINING
+=========================== -->
+
+<section class="training" id="training">
+
+<div class="section-header">
+
+<span>PROGRAMS</span>
+
+<h2>
+
+Choose your distance.
+
+</h2>
+
+</div>
+
+<div class="training-grid">
+
+<div class="training-card">
+
+<h3>
+
+5K
+
+</h3>
+
+<p>
+
+Speed development and race preparation.
+
+</p>
+
+<a href="#">
+
+Learn More →
+
+</a>
+
+</div>
+
+
+
+<div class="training-card">
+
+<h3>
+
+10K
+
+</h3>
+
+<p>
+
+Structured plans for every performance level.
+
+</p>
+
+<a href="#">
+
+Learn More →
+
+</a>
+
+</div>
+
+
+
+<div class="training-card">
+
+<h3>
+
+Half Marathon
+
+</h3>
+
+<p>
+
+Improve endurance and pacing.
+
+</p>
+
+<a href="#">
+
+Learn More →
+
+</a>
+
+</div>
+
+
+
+<div class="training-card">
+
+<h3>
+
+Marathon
+
+</h3>
+
+<p>
+
+Prepare for your next personal best.
+
+</p>
+
+<a href="#">
+
+Learn More →
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ====================================
+ACADEMY
+==================================== -->
+
+<section class="academy">
+
+<div class="academy-content">
+
+<div class="academy-left">
+
+<span class="section-tag">
+
+TWETE ACADEMY
+
+</span>
+
+<h2>
+
+Learn from the science behind performance.
+
+</h2>
+
+<p>
+
+Discover articles, videos and guides about endurance training,
+nutrition, recovery, strength training and race preparation.
+
+</p>
+
+<button class="primary-btn">
 
 Explore Academy
 
 </button>
 
+</div>
+
+
+<div class="academy-right">
+
+<img src="images/academy.png" alt="Academy">
+
+</div>
+
+</div>
+
 </section>
 
 
 
-<!-- REVIEWS -->
 
-<section class="reviews">
+
+<!-- ====================================
+PRICING
+==================================== -->
+
+<section class="pricing" id="pricing">
+
+<div class="section-header">
+
+<span>PRICING</span>
 
 <h2>
 
-Trusted by Athletes
+Choose your plan.
 
 </h2>
+
+<p>
+
+Start free and upgrade whenever you're ready.
+
+</p>
+
+</div>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+
+<h3>
+
+Free
+
+</h3>
+
+<h1>
+
+€0
+
+</h1>
+
+<p>
+
+Perfect to get started.
+
+</p>
+
+<ul>
+
+<li>✓ Basic Training</li>
+
+<li>✓ Activity Tracking</li>
+
+<li>✓ Progress Overview</li>
+
+</ul>
+
+<button>
+
+Start Free
+
+</button>
+
+</div>
+
+
+
+<div class="price-card featured">
+
+<div class="popular">
+
+MOST POPULAR
+
+</div>
+
+<h3>
+
+Pro
+
+</h3>
+
+<h1>
+
+€14.99
+
+<span>/month</span>
+
+</h1>
+
+<p>
+
+Everything serious athletes need.
+
+</p>
+
+<ul>
+
+<li>✓ AI Coaching</li>
+
+<li>✓ Personalized Plans</li>
+
+<li>✓ Performance Analytics</li>
+
+<li>✓ Coach Feedback</li>
+
+<li>✓ Unlimited Workouts</li>
+
+</ul>
+
+<button>
+
+Go Pro
+
+</button>
+
+</div>
+
+
+
+<div class="price-card">
+
+<h3>
+
+Elite
+
+</h3>
+
+<h1>
+
+Custom
+
+</h1>
+
+<p>
+
+For elite athletes and coaches.
+
+</p>
+
+<ul>
+
+<li>✓ Everything in Pro</li>
+
+<li>✓ Personal Coach</li>
+
+<li>✓ Premium Support</li>
+
+<li>✓ Team Management</li>
+
+</ul>
+
+<button>
+
+Contact Us
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- ====================================
+REVIEWS
+==================================== -->
+
+<section class="reviews" id="reviews">
+
+<div class="section-header">
+
+<span>REVIEWS</span>
+
+<h2>
+
+Trusted by runners.
+
+</h2>
+
+</div>
 
 <div class="review-grid">
 
@@ -363,13 +712,25 @@ Trusted by Athletes
 
 <p>
 
-"The most professional running platform I have ever used."
+TWETE completely changed the way I train.
 
 </p>
 
-<b>David</b>
+<h4>
+
+David
+
+</h4>
+
+<span>
+
+5K Runner
+
+</span>
 
 </div>
+
+
 
 <div class="review-card">
 
@@ -377,13 +738,25 @@ Trusted by Athletes
 
 <p>
 
-"My training has become smarter and more structured."
+The AI recommendations are incredibly accurate.
 
 </p>
 
-<b>Anna</b>
+<h4>
+
+Anna
+
+</h4>
+
+<span>
+
+Marathon Runner
+
+</span>
 
 </div>
+
+
 
 <div class="review-card">
 
@@ -391,11 +764,21 @@ Trusted by Athletes
 
 <p>
 
-"The analytics completely changed the way I train."
+The best running platform I have ever used.
 
 </p>
 
-<b>Michael</b>
+<h4>
+
+Michael
+
+</h4>
+
+<span>
+
+Coach
+
+</span>
 
 </div>
 
@@ -403,62 +786,245 @@ Trusted by Athletes
 
 </section>
 
+  <!-- ====================================
+CALL TO ACTION
+==================================== -->
 
+<section class="cta">
 
-<!-- COACH LOGIN -->
+<div class="cta-container">
 
-<section class="coach-area">
+<span>
 
-<div class="coach-login">
+READY TO LEVEL UP?
 
-<h3>
+</span>
 
-Coach Login
+<h2>
 
-</h3>
+Become the runner you've always wanted to be.
 
-<input
-id="coachPassword"
-type="password"
-placeholder="Coach Password">
+</h2>
 
-<button onclick="coachLogin()">
+<p>
 
-Login
+Join thousands of athletes already improving their performance with TWETE.
+
+</p>
+
+<div class="cta-buttons">
+
+<button class="primary-btn">
+
+Start Free
+
+</button>
+
+<button class="secondary-btn">
+
+View Pricing
 
 </button>
 
 </div>
 
+</div>
+
 </section>
 
 
 
-<!-- FOOTER -->
 
-<footer>
 
-<div class="footer-brand">
+<!-- ====================================
+FAQ
+==================================== -->
 
-<img src="images/logo.png" class="footer-icon" alt="TWETE">
+<section class="faq">
 
-<img src="images/twete.png" class="footer-wordmark" alt="TWETE">
+<div class="section-header">
+
+<span>FAQ</span>
+
+<h2>
+
+Frequently Asked Questions
+
+</h2>
 
 </div>
 
+<div class="faq-container">
+
+<div class="faq-item">
+
+<h3>
+
+Who is TWETE for?
+
+</h3>
+
 <p>
 
-Science. Performance. TWETE.
+TWETE is designed for beginners, ambitious runners and elite athletes.
 
 </p>
 
+</div>
+
+<div class="faq-item">
+
+<h3>
+
+Can I use my own coach?
+
+</h3>
+
 <p>
 
-© 2026 TWETE. All rights reserved.
+Yes. Coaches can manage athletes directly through the platform.
 
 </p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>
+
+Does TWETE use AI?
+
+</h3>
+
+<p>
+
+Yes. AI helps analyze training, recovery and performance to provide smarter recommendations.
+
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>
+
+Can I cancel anytime?
+
+</h3>
+
+<p>
+
+Yes. Every subscription can be cancelled whenever you like.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- ====================================
+FOOTER
+==================================== -->
+
+<footer id="contact">
+
+<div class="footer-container">
+
+<div class="footer-brand">
+
+<img src="images/logo.png" class="footer-logo" alt="TWETE">
+
+<img src="images/twete.png" class="footer-wordmark" alt="TWETE">
+
+<p>
+
+Science-driven coaching and intelligent performance analysis for every runner.
+
+</p>
+
+</div>
+
+
+
+<div class="footer-links">
+
+<h4>
+
+Platform
+
+</h4>
+
+<a href="#">Training</a>
+
+<a href="#">Academy</a>
+
+<a href="#">Pricing</a>
+
+<a href="#">Coaches</a>
+
+</div>
+
+
+
+<div class="footer-links">
+
+<h4>
+
+Company
+
+</h4>
+
+<a href="#">About</a>
+
+<a href="#">Contact</a>
+
+<a href="#">Privacy</a>
+
+<a href="#">Terms</a>
+
+</div>
+
+
+
+<div class="footer-links">
+
+<h4>
+
+Follow Us
+
+</h4>
+
+<a href="#">Instagram</a>
+
+<a href="#">YouTube</a>
+
+<a href="#">LinkedIn</a>
+
+<a href="#">X</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 TWETE. All Rights Reserved.
+
+</p>
+
+</div>
 
 </footer>
+
+
 
 <script src="script.js"></script>
 
