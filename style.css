@@ -1,8 +1,7 @@
 /* =========================================
-   STRIDELAB PREMIUM STYLE
+   TWETE PREMIUM STYLE
    PART 1
 ========================================= */
-
 
 /* RESET */
 
@@ -12,51 +11,37 @@
     box-sizing:border-box;
 }
 
-
-
 /* FARBEN */
 
 :root{
 
-    --primary:#2563eb;
-    --secondary:#14b8a6;
+    --primary:#C6FF00;
+    --primary-hover:#D8FF4A;
 
-    --dark:#0f172a;
+    --dark:#000000;
+    --dark-card:#111111;
 
     --light:#ffffff;
 
-    --gray:#64748b;
+    --gray:#9ca3af;
 
-    --glass:rgba(255,255,255,0.82);
+    --border:rgba(198,255,0,.15);
 
 }
-
-
 
 /* BODY */
 
 body{
 
-    font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+    font-family:'Space Grotesk',Arial,sans-serif;
 
-    background:
-    linear-gradient(
-        135deg,
-        #0ea5e9 0%,
-        #2563eb 45%,
-        #14b8a6 100%
-    );
+    background:#000;
+
+    color:#fff;
 
     min-height:100vh;
 
-    color:white;
-
 }
-
-
 
 /* LINKS */
 
@@ -67,8 +52,6 @@ a{
     color:inherit;
 
 }
-
-
 
 /* NAVIGATION */
 
@@ -88,35 +71,43 @@ a{
 
     align-items:center;
 
-    padding:0 60px;
+    padding:0 70px;
 
-    background:
+    background:rgba(0,0,0,.92);
 
-    rgba(255,255,255,0.15);
+    backdrop-filter:blur(18px);
 
-    backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border);
 
     z-index:1000;
 
 }
 
+/* BRAND */
 
+.brand{
 
-/* LOGO */
+    display:flex;
 
-.logo{
+    align-items:center;
 
-    font-size:34px;
-
-    font-weight:bold;
-
-    letter-spacing:1px;
+    gap:18px;
 
 }
 
+.logo{
 
+    width:48px;
 
-/* NAV LINKS */
+}
+
+.wordmark{
+
+    height:28px;
+
+}
+
+/* NAVIGATION */
 
 .nav-links{
 
@@ -126,27 +117,21 @@ a{
 
 }
 
-
-
 .nav-links a{
 
-    font-size:17px;
+    color:white;
 
-    font-weight:600;
+    font-weight:500;
 
-    transition:.25s;
+    transition:.3s;
 
 }
-
-
 
 .nav-links a:hover{
 
-    color:#dbeafe;
+    color:var(--primary);
 
 }
-
-
 
 /* LOGIN */
 
@@ -154,89 +139,67 @@ a{
 
     display:flex;
 
-    gap:10px;
+    gap:12px;
 
     align-items:center;
 
 }
 
-
-
 .login-box input{
 
-    width:160px;
+    width:150px;
 
-    padding:10px 14px;
-
-    border:none;
+    padding:12px;
 
     border-radius:12px;
 
-    background:white;
+    border:1px solid #222;
 
-    color:#111827;
+    background:#111;
 
-    font-size:15px;
+    color:white;
 
-}
-
-
-
-.login-box button{
-
-    padding:11px 22px;
+    outline:none;
 
 }
 
+.login-box input:focus{
 
+    border:1px solid var(--primary);
+
+}
 
 /* BUTTONS */
 
 button{
 
-    background:
+    background:var(--primary);
 
-    linear-gradient(
-        135deg,
-        #10b981,
-        #059669
-    );
-
-    color:white;
+    color:black;
 
     border:none;
 
-    border-radius:15px;
+    border-radius:14px;
 
-    padding:14px 26px;
+    padding:14px 24px;
 
-    font-size:16px;
-
-    font-weight:bold;
+    font-weight:700;
 
     cursor:pointer;
 
-    transition:.25s;
-
-    box-shadow:
-
-    0 10px 25px rgba(5,150,105,.35);
+    transition:.3s;
 
 }
-
-
 
 button:hover{
 
+    background:var(--primary-hover);
+
     transform:translateY(-3px);
 
-    box-shadow:
-
-    0 18px 35px rgba(5,150,105,.45);
+    box-shadow:0 0 25px rgba(198,255,0,.45);
 
 }
-
-
 
 /* HERO */
 
@@ -244,9 +207,9 @@ button:hover{
 
     max-width:1400px;
 
-    margin:80px auto;
+    margin:auto;
 
-    padding:0 60px;
+    padding:120px 70px;
 
     display:flex;
 
@@ -258,43 +221,55 @@ button:hover{
 
 }
 
-
-
-/* HERO TEXT */
-
 .hero-left{
 
     flex:1;
 
 }
 
+.hero-tag{
 
+    display:inline-block;
 
-.hero-left h1{
+    padding:10px 18px;
 
-    font-size:72px;
+    border:1px solid var(--border);
 
-    line-height:1.05;
+    border-radius:50px;
+
+    color:var(--primary);
 
     margin-bottom:30px;
 
+    letter-spacing:2px;
+
+    font-size:13px;
+
 }
 
+.hero-left h1{
 
+    font-size:86px;
+
+    line-height:1;
+
+    margin-bottom:35px;
+
+}
 
 .hero-left p{
 
     font-size:22px;
 
-    color:#e2e8f0;
+    color:#bdbdbd;
 
-    line-height:1.6;
+    line-height:1.8;
 
-    margin-bottom:40px;
+    max-width:650px;
+
+    margin-bottom:45px;
 
 }
-
-
 
 /* HERO BUTTONS */
 
@@ -308,25 +283,23 @@ button:hover{
 
 }
 
-
-
-.primary-button{
-
-    font-size:18px;
-
-}
-
-
-
 .secondary-button{
 
-    background:white;
+    background:transparent;
 
-    color:#2563eb;
+    border:2px solid var(--primary);
+
+    color:var(--primary);
 
 }
 
+.secondary-button:hover{
 
+    background:var(--primary);
+
+    color:black;
+
+}
 
 /* HERO IMAGE */
 
@@ -334,150 +307,72 @@ button:hover{
 
     flex:1;
 
-    text-align:center;
+    display:flex;
+
+    justify-content:center;
 
 }
 
+.hero-logo{
 
+    width:320px;
 
-.hero-right img{
-
-    width:100%;
-
-    max-width:600px;
-
-    border-radius:30px;
-
-    box-shadow:
-
-    0 30px 60px rgba(0,0,0,.25);
+    filter:drop-shadow(0 0 40px rgba(198,255,0,.30));
 
 }
 
-
-
-/* STATISTIKEN */
+/* STATS */
 
 .hero-stats{
 
     display:flex;
 
-    gap:50px;
+    gap:55px;
 
 }
-
-
 
 .hero-stats h2{
 
-    font-size:36px;
+    color:var(--primary);
+
+    font-size:42px;
 
 }
-
-
 
 .hero-stats p{
 
+    color:#999;
+
     margin-top:10px;
 
-    font-size:16px;
-
 }
-
-
 /* =========================================
-   STRIDELAB PREMIUM STYLE
+   TWETE PREMIUM STYLE
    PART 2
-=========================================*/
-
-
-/* VIDEO */
-
-.video-section{
-
-    max-width:1200px;
-
-    margin:120px auto;
-
-    padding:0 60px;
-
-    text-align:center;
-
-}
-
-
-.video-section h2{
-
-    font-size:48px;
-
-    margin-bottom:20px;
-
-}
-
-
-.video-section p{
-
-    font-size:20px;
-
-    color:#e2e8f0;
-
-    margin-bottom:50px;
-
-}
-
-
-.video-card{
-
-    background:rgba(255,255,255,0.15);
-
-    backdrop-filter:blur(18px);
-
-    border-radius:30px;
-
-    padding:25px;
-
-    box-shadow:
-
-    0 25px 60px rgba(0,0,0,.2);
-
-}
-
-
-.video-card video{
-
-    width:100%;
-
-    border-radius:22px;
-
-}
-
-
-
+========================================= */
 
 
 /* FEATURES */
 
 .features{
 
-    max-width:1300px;
+    max-width:1400px;
 
-    margin:120px auto;
+    margin:140px auto;
 
-    padding:0 60px;
+    padding:0 70px;
 
 }
-
 
 .features h2{
 
     text-align:center;
 
-    font-size:48px;
+    font-size:54px;
 
     margin-bottom:70px;
 
 }
-
 
 .feature-grid{
 
@@ -485,83 +380,77 @@ button:hover{
 
     grid-template-columns:repeat(2,1fr);
 
-    gap:35px;
+    gap:30px;
 
 }
 
-
 .feature-card{
 
-    background:var(--glass);
+    background:#111;
 
-    color:var(--dark);
+    border:1px solid rgba(198,255,0,.12);
 
-    border-radius:28px;
+    border-radius:26px;
 
     padding:40px;
 
     transition:.3s;
 
-    box-shadow:
-
-    0 20px 40px rgba(0,0,0,.12);
-
 }
-
 
 .feature-card:hover{
 
     transform:translateY(-8px);
 
-}
+    border-color:#C6FF00;
 
+    box-shadow:0 0 35px rgba(198,255,0,.12);
+
+}
 
 .feature-card h3{
 
-    color:var(--primary);
+    color:#C6FF00;
 
-    margin-bottom:18px;
+    font-size:30px;
 
-    font-size:28px;
+    margin-bottom:20px;
 
 }
-
 
 .feature-card p{
 
-    font-size:18px;
+    color:#b8b8b8;
 
-    line-height:1.6;
+    line-height:1.8;
+
+    font-size:18px;
 
 }
 
 
 
-
-
-/* TRAININGSPLÄNE */
+/* TRAINING PROGRAMS */
 
 .plans{
 
-    max-width:1350px;
+    max-width:1400px;
 
-    margin:120px auto;
+    margin:140px auto;
 
-    padding:0 60px;
+    padding:0 70px;
 
 }
-
 
 .plans h2{
 
     text-align:center;
 
-    font-size:48px;
+    font-size:54px;
 
     margin-bottom:70px;
 
 }
-
 
 .plan-grid{
 
@@ -569,133 +458,121 @@ button:hover{
 
     grid-template-columns:repeat(4,1fr);
 
-    gap:30px;
+    gap:28px;
 
 }
 
-
 .plan-card{
 
-    background:var(--glass);
+    background:#111;
 
-    color:var(--dark);
+    border:1px solid rgba(198,255,0,.12);
 
-    border-radius:30px;
+    border-radius:28px;
 
-    padding:35px;
+    padding:40px 30px;
 
     text-align:center;
 
     transition:.3s;
 
-    box-shadow:
-
-    0 18px 35px rgba(0,0,0,.12);
-
 }
-
 
 .plan-card:hover{
 
-    transform:translateY(-10px);
+    transform:translateY(-8px);
+
+    border-color:#C6FF00;
+
+    box-shadow:0 0 35px rgba(198,255,0,.12);
 
 }
 
-
 .plan-card h3{
 
-    color:var(--primary);
+    color:#C6FF00;
 
-    font-size:32px;
+    font-size:34px;
 
     margin-bottom:18px;
 
 }
 
-
 .plan-card p{
+
+    color:#bdbdbd;
 
     margin-bottom:30px;
 
-    color:var(--gray);
+    line-height:1.7;
 
 }
 
 
 
-
-
-/* EBOOKS */
+/* ACADEMY */
 
 .ebooks{
 
-    max-width:900px;
+    max-width:1100px;
 
-    margin:120px auto;
+    margin:140px auto;
+
+    padding:70px;
 
     text-align:center;
 
-    padding:60px;
+    background:#111;
 
-    background:var(--glass);
+    border:1px solid rgba(198,255,0,.12);
 
-    color:var(--dark);
-
-    border-radius:35px;
-
-    box-shadow:
-
-    0 20px 45px rgba(0,0,0,.12);
+    border-radius:32px;
 
 }
-
 
 .ebooks h2{
 
-    font-size:44px;
+    font-size:48px;
 
-    margin-bottom:20px;
+    margin-bottom:25px;
 
 }
-
 
 .ebooks p{
 
     font-size:20px;
 
-    line-height:1.6;
+    color:#bdbdbd;
 
-    margin-bottom:35px;
+    line-height:1.8;
+
+    margin-bottom:40px;
 
 }
 
 
 
-
-
-/* BEWERTUNGEN */
+/* REVIEWS */
 
 .reviews{
 
-    max-width:1350px;
+    max-width:1400px;
 
-    margin:120px auto;
+    margin:140px auto;
 
-    padding:0 60px;
+    padding:0 70px;
 
 }
-
 
 .reviews h2{
 
     text-align:center;
 
-    font-size:48px;
+    font-size:54px;
 
     margin-bottom:70px;
 
 }
-
 
 .review-grid{
 
@@ -707,54 +584,51 @@ button:hover{
 
 }
 
-
 .review-card{
 
-    background:rgba(255,255,255,.92);
+    background:#111;
 
-    color:var(--dark);
+    border:1px solid rgba(198,255,0,.12);
 
-    padding:35px;
+    border-radius:28px;
 
-    border-radius:30px;
-
-    box-shadow:
-
-    0 18px 40px rgba(0,0,0,.12);
+    padding:40px;
 
     transition:.3s;
 
 }
 
-
 .review-card:hover{
 
     transform:translateY(-8px);
 
-}
+    border-color:#C6FF00;
 
+    box-shadow:0 0 35px rgba(198,255,0,.12);
+
+}
 
 .review-card p{
 
+    color:#bdbdbd;
+
     margin:25px 0;
 
-    line-height:1.6;
+    line-height:1.8;
 
 }
 
-
 .review-card b{
 
-    color:var(--primary);
+    color:#C6FF00;
 
     font-size:18px;
 
 }
-
 /* =========================================
-   STRIDELAB PREMIUM STYLE
+   TWETE PREMIUM STYLE
    PART 3
-=========================================*/
+========================================= */
 
 
 /* COACH LOGIN */
@@ -763,41 +637,45 @@ button:hover{
 
     max-width:700px;
 
-    margin:120px auto;
+    margin:140px auto;
 
     padding:0 30px;
 
 }
 
-
 .coach-login{
 
-    background:rgba(255,255,255,0.92);
+    background:#111;
 
-    color:var(--dark);
+    border:1px solid rgba(198,255,0,.12);
 
     border-radius:30px;
 
-    padding:40px;
+    padding:45px;
 
     text-align:center;
 
-    box-shadow:
-    0 20px 45px rgba(0,0,0,.15);
+    transition:.3s;
 
 }
 
+.coach-login:hover{
+
+    border-color:#C6FF00;
+
+    box-shadow:0 0 35px rgba(198,255,0,.12);
+
+}
 
 .coach-login h3{
 
-    color:var(--primary);
+    color:#C6FF00;
 
-    font-size:30px;
+    font-size:34px;
 
     margin-bottom:30px;
 
 }
-
 
 .coach-login input{
 
@@ -805,57 +683,79 @@ button:hover{
 
     padding:16px;
 
-    margin-bottom:20px;
-
-    border:none;
+    margin-bottom:22px;
 
     border-radius:14px;
 
-    background:#f8fafc;
+    border:1px solid #333;
+
+    background:#000;
+
+    color:white;
+
+    outline:none;
 
     font-size:16px;
 
 }
 
+.coach-login input:focus{
+
+    border-color:#C6FF00;
+
+}
 
 
 /* FOOTER */
 
 footer{
 
-    margin-top:120px;
+    margin-top:140px;
 
     padding:70px 30px;
 
     text-align:center;
 
-    background:rgba(0,0,0,.15);
-
-    backdrop-filter:blur(20px);
+    border-top:1px solid rgba(198,255,0,.12);
 
 }
 
+.footer-brand{
 
-footer h2{
+    display:flex;
 
-    font-size:40px;
+    justify-content:center;
 
-    margin-bottom:15px;
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:25px;
 
 }
 
+.footer-icon{
+
+    width:46px;
+
+}
+
+.footer-wordmark{
+
+    height:30px;
+
+}
 
 footer p{
 
-    color:#dbeafe;
+    color:#999;
 
-    margin:10px 0;
+    margin-top:12px;
 
 }
 
 
-
-/* PREMIUM SCROLLBAR */
+/* SCROLLBAR */
 
 ::-webkit-scrollbar{
 
@@ -865,36 +765,33 @@ footer p{
 
 ::-webkit-scrollbar-track{
 
-    background:#dbeafe;
+    background:#000;
 
 }
 
 ::-webkit-scrollbar-thumb{
 
-    background:#2563eb;
+    background:#C6FF00;
 
-    border-radius:20px;
+    border-radius:50px;
 
 }
 
 
-
-/* TEXT MARKIERUNG */
+/* SELECTION */
 
 ::selection{
 
-    background:#14b8a6;
+    background:#C6FF00;
 
-    color:white;
+    color:black;
 
 }
 
 
-
-/* SANFTE ANIMATIONEN */
+/* ANIMATION */
 
 .hero,
-.video-section,
 .features,
 .plans,
 .ebooks,
@@ -905,14 +802,13 @@ footer p{
 
 }
 
-
 @keyframes fadeUp{
 
     from{
 
         opacity:0;
 
-        transform:translateY(35px);
+        transform:translateY(40px);
 
     }
 
@@ -927,219 +823,6 @@ footer p{
 }
 
 
+/* RESPONSIVE */
 
-/* RESPONSIVE TABLET */
-
-@media(max-width:1100px){
-
-.hero{
-
-    flex-direction:column;
-
-    text-align:center;
-
-}
-
-
-.hero-right{
-
-    order:-1;
-
-}
-
-
-.plan-grid{
-
-    grid-template-columns:repeat(2,1fr);
-
-}
-
-
-.review-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-
-.feature-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-
-.navbar{
-
-    flex-direction:column;
-
-    height:auto;
-
-    padding:20px;
-
-    gap:20px;
-
-}
-
-
-.login-box{
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-}
-
-}
-
-
-
-/* RESPONSIVE HANDY */
-
-@media(max-width:700px){
-
-.hero{
-
-    padding:0 25px;
-
-}
-
-
-.hero-left h1{
-
-    font-size:48px;
-
-}
-
-
-.hero-left p{
-
-    font-size:18px;
-
-}
-
-
-.hero-buttons{
-
-    flex-direction:column;
-
-}
-
-
-.hero-stats{
-
-    flex-direction:column;
-
-    gap:25px;
-
-}
-
-
-.video-section,
-.features,
-.plans,
-.reviews{
-
-    padding:0 20px;
-
-}
-
-
-.plan-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-
-.logo{
-
-    font-size:28px;
-
-}
-
-
-.nav-links{
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:15px;
-
-}
-
-
-.login-box{
-
-    flex-direction:column;
-
-    width:100%;
-
-}
-
-
-.login-box input{
-
-    width:100%;
-
-}
-
-
-.login-box button{
-
-    width:100%;
-
-}
-
-}
-
-
-
-/* HOVER EFFEKTE */
-
-.feature-card,
-.plan-card,
-.review-card{
-
-    transition:
-    transform .3s,
-    box-shadow .3s;
-
-}
-
-
-.feature-card:hover,
-.plan-card:hover,
-.review-card:hover{
-
-    box-shadow:
-    0 30px 60px rgba(0,0,0,.2);
-
-}
-
-
-
-/* GLAS EFFEKT */
-
-.video-card,
-.feature-card,
-.plan-card,
-.review-card,
-.coach-login{
-
-    border:1px solid rgba(255,255,255,.3);
-
-}
-
-
-
-/* BILDER */
-
-img{
-
-    max-width:100%;
-
-    display:block;
-
-}
+@
