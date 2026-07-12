@@ -1,43 +1,50 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>StrideLab</title>
+<title>TWETE</title>
 
 <link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
 
-<!-- Navigation -->
+<!-- NAVIGATION -->
 
 <nav class="navbar">
 
-<div class="logo">
+<div class="brand">
 
-🏃 StrideLab
+<img src="images/logo.png" class="logo" alt="TWETE Logo">
+
+<img src="images/twete.png" class="wordmark" alt="TWETE">
 
 </div>
 
 
 <div class="nav-links">
 
-<a href="#">Startseite</a>
+<a href="#">Home</a>
 
-<a href="#">Trainingspläne</a>
+<a href="#">Features</a>
 
-<a href="#">E-Books</a>
+<a href="#">Training</a>
 
-<a href="#">Coaching</a>
+<a href="#">Pricing</a>
 
-<a href="#">Kontakt</a>
+<a href="#">Contact</a>
 
 </div>
 
@@ -47,12 +54,12 @@
 <input
 id="athleteUsername"
 type="text"
-placeholder="Benutzername">
+placeholder="Username">
 
 <input
 id="athletePassword"
 type="password"
-placeholder="Passwort">
+placeholder="Password">
 
 <button onclick="athleteLogin()">
 
@@ -66,48 +73,58 @@ Login
 
 
 
-<!-- Hero -->
+<!-- HERO -->
 
 <section class="hero">
 
+
 <div class="hero-left">
+
+<span class="hero-tag">
+
+NEXT GENERATION RUNNING PLATFORM
+
+</span>
+
 
 <h1>
 
-Train smarter.<br>
+Science.<br>
 
-Run faster.
+Performance.<br>
+
+TWETE.
 
 </h1>
 
+
 <p>
 
-Personalisierte Trainingspläne
+Personalized training plans powered by sports science,
+elite coaching and intelligent performance analysis.
 
-für 5 km, 10 km,
-
-Halbmarathon und Marathon.
+Everything you need to become a faster runner.
 
 </p>
 
 
 <div class="hero-buttons">
 
-<button
-class="primary-button"
-onclick="register()">
+<button class="primary-button">
 
-Jetzt kostenlos starten
+Get Started
 
 </button>
 
+
 <button class="secondary-button">
 
-Trainingspläne entdecken
+Explore Training
 
 </button>
 
 </div>
+
 
 
 <div class="hero-stats">
@@ -116,23 +133,25 @@ Trainingspläne entdecken
 
 <h2>500+</h2>
 
-<p>Athleten</p>
+<p>Athletes</p>
 
 </div>
+
 
 <div>
 
-<h2>25000+</h2>
+<h2>25K+</h2>
 
-<p>Trainings</p>
+<p>Completed Workouts</p>
 
 </div>
+
 
 <div>
 
 <h2>96%</h2>
 
-<p>Ziel erreicht</p>
+<p>Goal Achievement</p>
 
 </div>
 
@@ -145,99 +164,65 @@ Trainingspläne entdecken
 <div class="hero-right">
 
 <img
-src="hero-runner.jpg"
-alt="Runner">
+src="images/logo.png"
+class="hero-logo"
+alt="TWETE">
 
 </div>
 
 </section>
-
-
-
-
-<!-- Video -->
-
-<section class="video-section">
-
-<h2>
-
-Warum StrideLab?
-
-</h2>
-
-<p>
-
-Erfahre in zwei Minuten,
-
-wie StrideLab dich schneller macht.
-
-</p>
-
-<div class="video-card">
-
-<video controls>
-
-<source
-src="video.mp4"
-type="video/mp4">
-
-</video>
-
-</div>
-
-</section>
-<!-- Features -->
+<!-- FEATURES -->
 
 <section class="features">
 
-<h2>
-Warum StrideLab?
-</h2>
+<h2>Why TWETE?</h2>
 
 <div class="feature-grid">
 
 <div class="feature-card">
 
-<h3>🏃 Individuelle Trainingspläne</h3>
+<h3>Personalized Training</h3>
 
 <p>
-Jeder Trainingsplan wird auf dein Leistungsniveau und deine Ziele abgestimmt.
+
+Every training plan is individually adapted to your current fitness, experience and personal goals.
+
 </p>
 
 </div>
 
-
-
 <div class="feature-card">
 
-<h3>📈 Leistungsanalyse</h3>
+<h3>Performance Analytics</h3>
 
 <p>
-Analysiere deine Entwicklung und verfolge deinen Fortschritt Woche für Woche.
+
+Track every workout, analyze your progress and discover where you can improve.
+
 </p>
 
 </div>
 
-
-
 <div class="feature-card">
 
-<h3>🧠 KI-Unterstützung</h3>
+<h3>AI Coaching</h3>
 
 <p>
-Nutze intelligente Trainingsvorschläge und moderne Trainingssteuerung.
+
+Receive intelligent training recommendations powered by sports science and artificial intelligence.
+
 </p>
 
 </div>
 
-
-
 <div class="feature-card">
 
-<h3>🏆 Wettkampfvorbereitung</h3>
+<h3>Elite Coaches</h3>
 
 <p>
-Optimiere deine Form für deinen nächsten Wettkampf.
+
+Train with plans created by experienced athletes and world-class coaches.
+
 </p>
 
 </div>
@@ -248,219 +233,54 @@ Optimiere deine Form für deinen nächsten Wettkampf.
 
 
 
-
-<!-- Trainingspläne -->
+<!-- TRAINING PROGRAMS -->
 
 <section class="plans">
 
-<h2>
-Unsere Trainingspläne
-</h2>
+<h2>Training Programs</h2>
 
 <div class="plan-grid">
 
 <div class="plan-card">
 
-<h3>5 km</h3>
+<h3>5K</h3>
 
-<p>Vom Anfänger bis unter 15 Minuten.</p>
+<p>
+
+From beginners to sub 15 minutes.
+
+</p>
 
 <button>
-Mehr erfahren
+
+Learn More
+
 </button>
 
 </div>
-
 
 <div class="plan-card">
 
-<h3>10 km</h3>
+<h3>10K</h3>
 
-<p>Professionelle Trainingsprogramme.</p>
+<p>
+
+Structured training plans for every performance level.
+
+</p>
 
 <button>
-Mehr erfahren
+
+Learn More
+
 </button>
 
 </div>
-
 
 <div class="plan-card">
 
-<h3>Halbmarathon</h3>
-
-<p>Strukturiert und leistungsorientiert.</p>
-
-<button>
-Mehr erfahren
-</button>
-
-</div>
-
-
-<div class="plan-card">
-
-<h3>Marathon</h3>
-
-<p>Von der ersten Ziellinie bis zur Bestzeit.</p>
-
-<button>
-Mehr erfahren
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-
-<!-- E-Books -->
-
-<section class="ebooks">
-
-<h2>
-📚 E-Books
-</h2>
+<h3>Half Marathon</h3>
 
 <p>
 
-Lerne mehr über Training, Ernährung, Regeneration und Leistungsentwicklung.
-
-</p>
-
-<button>
-
-Alle E-Books ansehen
-
-</button>
-
-</section>
-
-
-
-
-<!-- Bewertungen -->
-
-<section class="reviews">
-
-<h2>
-Das sagen unsere Athleten
-</h2>
-
-<div class="review-grid">
-
-<div class="review-card">
-
-⭐⭐⭐⭐⭐
-
-<p>
-
-"Ich habe meine 5-km-Zeit innerhalb weniger Wochen deutlich verbessert."
-
-</p>
-
-<b>David</b>
-
-</div>
-
-
-
-<div class="review-card">
-
-⭐⭐⭐⭐⭐
-
-<p>
-
-"Professionelle Trainingspläne und hervorragende Betreuung."
-
-</p>
-
-<b>Anna</b>
-
-</div>
-
-
-
-<div class="review-card">
-
-⭐⭐⭐⭐⭐
-
-<p>
-
-"Die beste Laufplattform, die ich bisher genutzt habe."
-
-</p>
-
-<b>Michael</b>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-
-<!-- Coach Login -->
-
-<section class="coach-area">
-
-<div class="coach-login">
-
-<h3>
-🧑‍🏫 Coach Login
-</h3>
-
-<input
-id="coachPassword"
-type="password"
-placeholder="Coach Passwort">
-
-<button onclick="coachLogin()">
-
-Login
-
-</button>
-
-</div>
-
-</section>
-
-
-
-
-<footer>
-
-<h2>
-
-🏃 StrideLab
-
-</h2>
-
-<p>
-
-Train smarter. Run faster.
-
-</p>
-
-<p>
-
-© 2026 StrideLab
-
-</p>
-
-</footer>
-
-
-
-
-
-<script src="script.js"></script>
-
-</body>
-
-</html>
+Increase endurance and
